@@ -1,0 +1,10 @@
+node_modules/
+dist/
+work/
+outputs/
+token.env
+
+.DS_Store
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
