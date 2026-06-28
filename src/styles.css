@@ -231,17 +231,6 @@ p {
   object-position: 50% 35%;
 }
 
-.hero-image-wrap::after {
-  position: absolute;
-  right: -20px;
-  bottom: -20px;
-  width: 42%;
-  height: 28%;
-  border: 1px solid rgba(184, 148, 134, 0.42);
-  border-radius: 24px;
-  content: "";
-}
-
 .section-heading {
   max-width: 820px;
   margin-bottom: 52px;
