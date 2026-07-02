@@ -20,22 +20,89 @@ const links = {
   docs: "https://drive.google.com/drive/folders/1oplxtSNpSCYeQsyoCgzILNulmMn6hGnl?usp=sharing",
   privacy: "privacy.html",
   offer: "offer.html",
-  quotePost: "https://t.me/barbarakaracharovaa/2135",
 };
 
-const topics = [
-  "Тревожные состояния",
-  "Депрессивные состояния",
-  "Отношения и привязанность",
-  "Стыд и вина",
-  "Личные границы",
-  "Эмоциональная нестабильность",
-  "Созависимость",
-  "Идентичность",
-  "ПТСР",
-  "Самоповреждение в анамнезе",
-  "БАР и ПРЛ",
-  "Одиночество",
+const requests = [
+  {
+    title: "Эмоциональная нестабильность",
+    text: "Когда реакции становятся слишком сильными, быстро появляется стыд, вина, злость или страх отвержения, а потом сложно вернуться в устойчивое состояние.",
+  },
+  {
+    title: "БАР, ПРЛ, ПТСР",
+    text: "Опыт жизни с диагнозом, ремиссия, страх срыва, отношения с лечением, навыки самоподдержки и попытка построить жизнь не вокруг кризиса.",
+  },
+  {
+    title: "Тревога и депрессивные состояния",
+    text: "Навязчивые мысли, напряжение, апатия, ощущение бессилия, потеря контакта с желаниями и с собственной жизнью.",
+  },
+  {
+    title: "Стыд, вина и внутренняя критика",
+    text: "Ощущение, что с вами что-то фундаментально не так, постоянная попытка себя чинить, заслуживать право быть собой.",
+  },
+  {
+    title: "Отношения и привязанность",
+    text: "Страх близости и отвержения, зависимость от реакции другого человека, сложные расставания, созависимость и потеря контакта с собой.",
+  },
+  {
+    title: "Границы и злость",
+    text: "Когда злость кажется опасной для отношений, а границы путаются с агрессией, конфликтом или чувством вины.",
+  },
+  {
+    title: "Одиночество и идентичность",
+    text: "Пустота, вопрос «кто я вообще», нехватка живого контакта, сложность собирать себя вне ролей, диагноза или чужих ожиданий.",
+  },
+  {
+    title: "Самоповреждение в анамнезе",
+    text: "Бережная работа с опытом сильного напряжения, стыда после реакций и поиском более безопасных способов справляться.",
+  },
+];
+
+const posts = [
+  {
+    title: "Не романтизировать расстройства",
+    href: "https://t.me/barbarakaracharovaa/2114",
+    text: "О том, почему за эстетикой боли часто теряется реальность БАР, ПРЛ, депрессии, лечения и ежедневного восстановления.",
+  },
+  {
+    title: "Почему ремиссия может пугать",
+    href: "https://t.me/barbarakaracharovaa/2117",
+    text: "Про потерю привычной версии себя, знакомость срыва и необходимость строить идентичность не вокруг боли.",
+  },
+  {
+    title: "Созависимость, стыд и потеря себя",
+    href: "https://t.me/barbarakaracharovaa/2118",
+    text: "Разбор книги и механизмов жизни через другого человека: подстройка, спасательство, эмоциональное сканирование.",
+  },
+  {
+    title: "Не все нужно чинить",
+    href: "https://t.me/barbarakaracharovaa/2135",
+    text: "О терапии не как о бесконечном ремонте себя, а как о способе понимать, принимать и учитывать разные части опыта.",
+  },
+  {
+    title: "Злость после дисфункционального опыта",
+    href: "https://t.me/barbarakaracharovaa/2136",
+    text: "Про злость, месть, границы, бессилие и боль у людей, выросших в семьях с насилием, унижением или пренебрежением.",
+  },
+  {
+    title: "Внимание и близость — не одно и то же",
+    href: "https://t.me/barbarakaracharovaa/2133",
+    text: "О взрослом одиночестве, дружбе, блоге, границах и устойчивости, которая строится через разные связи.",
+  },
+];
+
+const limits = [
+  {
+    title: "Я не работаю единоразово",
+    text: "Одна встреча может помочь познакомиться и обозначить запрос, но глубокая психологическая работа требует регулярности и времени.",
+  },
+  {
+    title: "Я не психиатр",
+    text: "Я не ставлю медицинские диагнозы и не назначаю медикаменты. При необходимости могу рекомендовать обратиться к врачу-психиатру.",
+  },
+  {
+    title: "Я не работаю краткосрочно",
+    text: "Если запрос связан с устойчивыми паттернами, травматичным опытом, БАР, ПРЛ, ПТСР или отношениями, мы планируем не быстрый совет, а процесс.",
+  },
 ];
 
 const education = [
@@ -61,11 +128,6 @@ const faq = [
       "Да. Первая встреча нужна, чтобы спокойно познакомиться, обозначить запрос и понять, какой формат работы будет бережным и полезным именно для вас.",
   },
   {
-    question: "С какими темами можно обращаться?",
-    answer:
-      "Можно приходить с тревожными и депрессивными состояниями, темами отношений, идентичности, стыда, злости, границ, созависимости, БАР, ПРЛ, ПТСР и эмоциональной нестабильности.",
-  },
-  {
     question: "Сколько стоит консультация?",
     answer: "Стоимость онлайн-сессии — 4000 ₽. Запись проходит через форму.",
   },
@@ -73,9 +135,17 @@ const faq = [
 
 const steps = [
   ["Запись", "Вы оставляете заявку через форму, выбираете удобный способ связи и время."],
-  ["Первая встреча", "Спокойно знакомитесь, формулируете запрос и смотрите, насколько вам подходит контакт."],
-  ["Регулярная работа", "Исследуете переживания, реакции, отношения и способы справляться с напряжением."],
-  ["Изменения", "Постепенно появляется больше ясности, устойчивости и контакта с собой."],
+  ["Первая встреча", "Мы знакомимся, обсуждаем запрос и смотрим, насколько вам подходит мой формат работы."],
+  ["Регулярная работа", "Исследуем переживания, реакции, отношения, повторяющиеся сценарии и способы выдерживать напряжение."],
+  ["Опора", "Постепенно появляется больше ясности, навыков, контакта с собой и устойчивости в повседневной жизни."],
+];
+
+const gallery = [
+  ["/images/mood-1.webp", "Варвара Лузан"],
+  ["/images/mood-2.webp", "Портрет Варвары Лузан"],
+  ["/images/mood-3.webp", "Варвара Лузан на улице"],
+  ["/images/mood-4.webp", "Портрет с солнечным светом"],
+  ["/images/mood-5.webp", "Портрет Варвары"],
 ];
 
 const reveal = {
@@ -114,7 +184,7 @@ function ParallaxImage({
   className?: string;
 }) {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [-12, 16]);
+  const y = useTransform(scrollYProgress, [0, 1], [-10, 16]);
   return (
     <motion.img
       style={{ y }}
@@ -134,8 +204,9 @@ function Header() {
         ВЛ
       </a>
       <nav aria-label="Основная навигация">
-        <a href="#work">Темы</a>
-        <a href="#approach">Подход</a>
+        <a href="#requests">Запросы</a>
+        <a href="#posts">Посты</a>
+        <a href="#format">Формат</a>
         <a href="#price">Стоимость</a>
         <a href="#contacts">Контакты</a>
       </nav>
@@ -148,14 +219,24 @@ function Hero() {
     <section id="top" className="hero section">
       <FadeIn className="hero-copy">
         <span className="eyebrow">Клинический психолог с личной историей</span>
-        <h1>Варвара Лузан</h1>
+        <h1>
+          Варвара
+          <br />
+          Лузан
+        </h1>
         <p className="lead">
-          «Изучаю психику изнутри». Работаю в КПТ-подходе с использованием ДБТ и ACT.
+          Пространство для разговора о том, что обычно сложно объяснить без стыда,
+          самозащиты и попытки срочно стать «нормальным».
         </p>
         <p>
-          Пространство, где можно говорить о тяжелом опыте без необходимости казаться
-          нормальным и без страха осуждения.
+          Работаю в КПТ-подходе с использованием ДБТ и ACT. Много пишу о БАР, ПРЛ,
+          ПТСР, отношениях, стыде, границах и восстановлении.
         </p>
+        <div className="hero-meta">
+          <span>онлайн</span>
+          <span>4000 ₽</span>
+          <span>регулярная работа</span>
+        </div>
         <div className="actions">
           <a className="button primary" href={links.booking} target="_blank" rel="noreferrer">
             Записаться <ArrowUpRight size={18} aria-hidden="true" />
@@ -165,7 +246,7 @@ function Hero() {
           </a>
         </div>
       </FadeIn>
-      <FadeIn className="hero-image-wrap">
+      <FadeIn className="hero-visual">
         <img
           src="/images/hero.webp"
           alt="Варвара Лузан"
@@ -173,25 +254,42 @@ function Hero() {
           loading="eager"
           decoding="async"
         />
+        <div className="hero-caption">
+          <span>перевожу ощущения, которым человек никогда не мог найти слова</span>
+        </div>
       </FadeIn>
     </section>
   );
 }
 
-function Topics() {
+function Requests() {
   return (
-    <section id="work" className="section">
-      <FadeIn className="section-heading">
-        <span className="eyebrow">С чем можно прийти</span>
-        <h2>Темы, о которых здесь можно говорить честно</h2>
+    <section id="requests" className="section requests-section">
+      <FadeIn className="section-heading split-heading">
+        <span className="eyebrow">С какими запросами можно прийти</span>
+        <h2>Когда внутри слишком много, а слов пока недостаточно</h2>
       </FadeIn>
-      <div className="topic-grid">
-        {topics.map((topic) => (
-          <FadeIn key={topic} className="topic-card">
-            <span>{topic}</span>
+      <div className="request-list">
+        {requests.map((item, index) => (
+          <FadeIn className="request-row" key={item.title}>
+            <span className="row-number">[{String(index + 1).padStart(2, "0")}]</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
           </FadeIn>
         ))}
       </div>
+    </section>
+  );
+}
+
+function PhotoBreak() {
+  return (
+    <section className="photo-band" aria-label="Фотографии Варвары">
+      {gallery.map(([src, alt], index) => (
+        <FadeIn className={`band-photo band-photo-${index + 1}`} key={src}>
+          <img src={src} alt={alt} loading="lazy" decoding="async" />
+        </FadeIn>
+      ))}
     </section>
   );
 }
@@ -207,7 +305,7 @@ function Approach() {
           учиться учитывать, а какие-то вообще оказываются не поломкой, а обычным
           человеческим опытом».
         </p>
-        <a href={links.quotePost} target="_blank" rel="noreferrer">
+        <a href="https://t.me/barbarakaracharovaa/2135" target="_blank" rel="noreferrer">
           Читать пост в Telegram
         </a>
       </FadeIn>
@@ -219,9 +317,8 @@ function Approach() {
         />
         <FadeIn className="text-panel">
           <p>
-            В работе я использую КПТ, ДБТ и ACT. Эти подходы помогают глубже
-            исследовать эмоции, внутренние конфликты и ценности, а также находить
-            способы справляться с острыми состояниями и хроническим стрессом.
+            Мне близка не романтизация боли, а уважение к людям, которые пытаются
+            выстроить себе жизнь, где не нужно ежедневно себя спасать.
           </p>
         </FadeIn>
       </div>
@@ -229,9 +326,52 @@ function Approach() {
   );
 }
 
+function Posts() {
+  return (
+    <section id="posts" className="section posts-section">
+      <FadeIn className="section-heading split-heading">
+        <span className="eyebrow">Важные посты</span>
+        <h2>Тексты, по которым можно почувствовать мой язык и темы</h2>
+      </FadeIn>
+      <div className="posts-grid">
+        {posts.map((post, index) => (
+          <FadeIn className="post-card" key={post.href}>
+            <span className="row-number">[{String(index + 1).padStart(2, "0")}]</span>
+            <h3>{post.title}</h3>
+            <p>{post.text}</p>
+            <a href={post.href} target="_blank" rel="noreferrer">
+              Читать <ArrowUpRight size={17} aria-hidden="true" />
+            </a>
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FormatBoundaries() {
+  return (
+    <section id="format" className="section format-section">
+      <FadeIn className="format-intro">
+        <span className="eyebrow">Важно про формат</span>
+        <h2>Я работаю не в логике быстрых советов</h2>
+      </FadeIn>
+      <div className="limits-grid">
+        {limits.map((item, index) => (
+          <FadeIn className="limit-card" key={item.title}>
+            <span className="row-number">[{String(index + 1).padStart(2, "0")}]</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Process() {
   return (
-    <section className="section">
+    <section className="section process-section">
       <FadeIn className="section-heading narrow">
         <span className="eyebrow">Как проходят консультации</span>
         <h2>
@@ -356,7 +496,7 @@ function Contacts() {
           </a>
         </div>
       </FadeIn>
-      <ParallaxImage src="/images/warm.webp" alt="Варвара Лузан" className="contact-photo" />
+      <ParallaxImage src="/images/contact.webp" alt="Варвара Лузан" className="contact-photo" />
     </section>
   );
 }
@@ -418,8 +558,11 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Topics />
+        <Requests />
+        <PhotoBreak />
         <Approach />
+        <Posts />
+        <FormatBoundaries />
         <Process />
         <Education />
         <Price />
