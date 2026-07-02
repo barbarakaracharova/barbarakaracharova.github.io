@@ -251,8 +251,7 @@ p {
 
 .hero-image,
 .soft-photo,
-.contact-photo,
-.band-photo img {
+.contact-photo {
   display: block;
   width: 100%;
   object-fit: cover;
@@ -319,50 +318,6 @@ p {
   font-size: 16px;
 }
 
-.photo-band {
-  display: grid;
-  grid-template-columns: 1.1fr 0.72fr 0.9fr 0.7fr;
-  gap: 14px;
-  width: min(1220px, calc(100% - 36px));
-  margin: 0 auto;
-  padding: 16px 0 clamp(56px, 8vw, 100px);
-  align-items: end;
-}
-
-.band-photo {
-  overflow: hidden;
-  background: #0f1e36;
-}
-
-.band-photo img {
-  height: 100%;
-  transition: transform 0.6s ease;
-}
-
-.band-photo:hover img {
-  transform: scale(1.025);
-}
-
-.band-photo-1 {
-  height: 370px;
-}
-
-.band-photo-2 {
-  height: 520px;
-}
-
-.band-photo-3 {
-  height: 310px;
-}
-
-.band-photo-4 {
-  height: 460px;
-}
-
-.band-photo-5 {
-  display: none;
-}
-
 .approach {
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(300px, 0.9fr);
@@ -386,7 +341,10 @@ p {
   color: #f9f4ed;
   font-size: clamp(25px, 3vw, 42px);
   font-weight: 300;
+  hyphens: none;
   line-height: 1.3;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .quote-block a {
@@ -409,11 +367,6 @@ p {
 .soft-photo {
   aspect-ratio: 3 / 2;
   object-position: 44% 36%;
-}
-
-.text-panel {
-  padding: 28px 0 0;
-  border-top: 1px solid rgba(15, 30, 54, 0.18);
 }
 
 .posts-section {
@@ -760,14 +713,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .photo-band {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .band-photo-4 {
-    display: none;
-  }
-
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -825,22 +770,6 @@ footer {
 
   .request-row p {
     grid-column: auto;
-  }
-
-  .photo-band {
-    grid-template-columns: 1fr 1fr;
-    width: min(100% - 28px, 1220px);
-    gap: 10px;
-  }
-
-  .band-photo-1,
-  .band-photo-2,
-  .band-photo-3 {
-    height: 280px;
-  }
-
-  .band-photo-3 {
-    grid-column: span 2;
   }
 
   .post-card,

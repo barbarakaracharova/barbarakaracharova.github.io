@@ -140,14 +140,6 @@ const steps = [
   ["Опора", "Постепенно появляется больше ясности, навыков, контакта с собой и устойчивости в повседневной жизни."],
 ];
 
-const gallery = [
-  ["/images/mood-1.webp", "Варвара Лузан"],
-  ["/images/mood-2.webp", "Портрет Варвары Лузан"],
-  ["/images/mood-3.webp", "Варвара Лузан на улице"],
-  ["/images/mood-4.webp", "Портрет с солнечным светом"],
-  ["/images/mood-5.webp", "Портрет Варвары"],
-];
-
 const reveal = {
   hidden: { opacity: 0, y: 22, scale: 0.985 },
   visible: { opacity: 1, y: 0, scale: 1 },
@@ -282,27 +274,21 @@ function Requests() {
   );
 }
 
-function PhotoBreak() {
-  return (
-    <section className="photo-band" aria-label="Фотографии Варвары">
-      {gallery.map(([src, alt], index) => (
-        <FadeIn className={`band-photo band-photo-${index + 1}`} key={src}>
-          <img src={src} alt={alt} loading="lazy" decoding="async" />
-        </FadeIn>
-      ))}
-    </section>
-  );
-}
-
 function Approach() {
   return (
     <section id="approach" className="section approach">
       <FadeIn className="quote-block">
         <Shield size={24} aria-hidden="true" />
-        <h2>Почему ко мне приходят</h2>
+        <h2>
+          Почему
+          <br />
+          ко мне
+          <br />
+          приходят
+        </h2>
         <p>
-          «Какие-то части себя нужно понимать, какие-то — принимать, какие-то —
-          учиться учитывать, а какие-то вообще оказываются не поломкой, а обычным
+          «Какие‑то части себя нужно понимать, какие‑то — принимать, какие‑то —
+          учиться учитывать, а какие‑то вообще оказываются не поломкой, а обычным
           человеческим опытом».
         </p>
         <a href="https://t.me/barbarakaracharovaa/2135" target="_blank" rel="noreferrer">
@@ -315,12 +301,6 @@ function Approach() {
           alt="Портрет Варвары Лузан"
           className="soft-photo"
         />
-        <FadeIn className="text-panel">
-          <p>
-            Мне близка не романтизация боли, а уважение к людям, которые пытаются
-            выстроить себе жизнь, где не нужно ежедневно себя спасать.
-          </p>
-        </FadeIn>
       </div>
     </section>
   );
@@ -559,7 +539,6 @@ function App() {
       <main>
         <Hero />
         <Requests />
-        <PhotoBreak />
         <Approach />
         <Posts />
         <FormatBoundaries />
