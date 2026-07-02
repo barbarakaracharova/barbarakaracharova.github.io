@@ -208,6 +208,9 @@ function Header() {
         <a href="#price">Стоимость</a>
         <a href="#contacts">Контакты</a>
       </nav>
+      <a className="header-cta" href={links.booking} target="_blank" rel="noreferrer">
+        Записаться <ArrowUpRight size={16} aria-hidden="true" />
+      </a>
     </header>
   );
 }
