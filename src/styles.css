@@ -668,9 +668,16 @@ footer {
   gap: 6px;
 }
 
+.source-notes p {
+  color: rgba(23, 34, 53, 0.68);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .legal-links {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 8px;
   gap: 12px 18px;
 }
 

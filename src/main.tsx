@@ -16,7 +16,7 @@ import "./styles.css";
 const links = {
   booking: "https://forms.gle/uEQjb3G1icpALYnp9",
   telegram: "https://t.me/barbarakaracharovaa",
-  instagram: "https://www.instagram.com/barbarakaracharova.a/",
+  instagram: "https://www.instagram.com/se_live_psychology",
   docs: "https://drive.google.com/drive/folders/1oplxtSNpSCYeQsyoCgzILNulmMn6hGnl?usp=sharing",
   privacy: "privacy.html",
   offer: "offer.html",
@@ -476,7 +476,7 @@ function Contacts() {
         <h2>Контакты</h2>
         <p>
           Самый прямой путь — форма записи. Для живого контекста и публикаций можно
-          перейти в Telegram или Instagram.
+          перейти в Telegram или Instagram*.
         </p>
         <div className="contact-links">
           <a href={links.booking} target="_blank" rel="noreferrer">
@@ -486,7 +486,7 @@ function Contacts() {
             Telegram <MessageCircle size={18} />
           </a>
           <a href={links.instagram} target="_blank" rel="noreferrer">
-            Instagram <Instagram size={18} />
+            Instagram* <Instagram size={18} />
           </a>
         </div>
       </FadeIn>
@@ -530,6 +530,15 @@ function Footer() {
   return (
     <footer>
       <div className="source-notes">
+        <p>
+          Услуги носят консультативный характер, не являются медицинской деятельностью
+          и не заменяют обращения к врачу.
+        </p>
+        <p>Сайт предназначен для лиц старше 18 лет (18+).</p>
+        <p>
+          * Instagram принадлежит компании Meta Platforms Inc., деятельность которой
+          признана экстремистской и запрещена в РФ.
+        </p>
         <span className="legal-links">
           <a href={links.privacy}>Политика конфиденциальности</a>
           <a href={links.offer}>Оферта</a>
