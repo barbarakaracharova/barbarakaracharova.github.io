@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  color: #1800ad;
+  color: #172235;
   background: #f6f1ea;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,7 +50,7 @@ button {
   width: 100%;
   height: 3px;
   transform-origin: left;
-  background: #ff6b4a;
+  background: #c7a782;
 }
 
 .site-header {
@@ -65,9 +65,9 @@ button {
   width: min(1220px, calc(100% - 36px));
   margin: 0;
   padding: 12px 14px;
-  border: 1px solid rgba(246, 241, 234, 0.2);
+  border: 1px solid rgba(246, 241, 234, 0.14);
   border-radius: 999px;
-  background: rgba(24, 0, 173, 0.9);
+  background: rgba(15, 30, 54, 0.88);
   color: #f9f4ed;
   transform: translateX(-50%);
   backdrop-filter: blur(18px);
@@ -80,7 +80,7 @@ button {
   place-items: center;
   border-radius: 50%;
   background: #f6f1ea;
-  color: #1800ad;
+  color: #0f1e36;
   font-size: 13px;
   font-weight: 700;
 }
@@ -111,7 +111,7 @@ nav a:hover {
   padding: 0 18px;
   border-radius: 999px;
   background: #f6f1ea;
-  color: #1800ad;
+  color: #0f1e36;
   font-size: 14px;
   font-weight: 800;
   transition:
@@ -121,8 +121,7 @@ nav a:hover {
 
 .header-cta:hover {
   transform: translateY(-2px);
-  background: #ff6b4a;
-  color: #ffffff;
+  background: #ffffff;
 }
 
 .section {
@@ -141,7 +140,7 @@ nav a:hover {
   min-height: 88vh;
   margin-top: -76px;
   padding: clamp(108px, 11vw, 148px) max(18px, calc((100vw - 1220px) / 2)) clamp(40px, 5vw, 64px);
-  background: #1800ad;
+  background: #0f1e36;
   color: #f9f4ed;
 }
 
@@ -153,7 +152,7 @@ nav a:hover {
   display: inline-flex;
   max-width: 100%;
   margin-bottom: 22px;
-  color: #ff6b4a;
+  color: #9d8063;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0;
@@ -164,7 +163,7 @@ nav a:hover {
 .hero .eyebrow,
 .format-section .eyebrow,
 .price-card .eyebrow {
-  color: #ffc7b8;
+  color: #d7b996;
 }
 
 h1,
@@ -194,7 +193,7 @@ h3 {
 }
 
 p {
-  color: rgba(24, 0, 173, 0.68);
+  color: rgba(23, 34, 53, 0.72);
   font-size: clamp(17px, 1.42vw, 20px);
   line-height: 1.7;
 }
@@ -264,8 +263,8 @@ p {
 }
 
 .primary {
-  background: #ff6b4a;
-  color: #ffffff;
+  background: #f6f1ea;
+  color: #0f1e36;
 }
 
 .secondary {
@@ -324,7 +323,7 @@ p {
 }
 
 .request-list {
-  border-top: 1px solid rgba(24, 0, 173, 0.18);
+  border-top: 1px solid rgba(15, 30, 54, 0.18);
 }
 
 .request-row {
@@ -332,11 +331,11 @@ p {
   grid-template-columns: 120px minmax(230px, 0.52fr) minmax(0, 1fr);
   gap: clamp(18px, 3vw, 46px);
   padding: clamp(16px, 2vw, 24px) 0;
-  border-bottom: 1px solid rgba(24, 0, 173, 0.18);
+  border-bottom: 1px solid rgba(15, 30, 54, 0.18);
 }
 
 .row-number {
-  color: #ff6b4a;
+  color: #9d8063;
   font-size: 15px;
   font-weight: 700;
 }
@@ -362,7 +361,7 @@ p {
   flex-direction: column;
   justify-content: center;
   padding: clamp(28px, 4vw, 50px);
-  background: #1800ad;
+  background: #172235;
   color: #f9f4ed;
 }
 
@@ -385,7 +384,7 @@ p {
 .quote-block a {
   display: inline-flex;
   margin-top: 24px;
-  color: #ffc7b8;
+  color: #d7b996;
   font-weight: 700;
   transition: color 0.25s ease;
 }
@@ -407,7 +406,7 @@ p {
 }
 
 .posts-section {
-  background: #ece7ff;
+  background: #e8ded2;
   width: 100%;
   max-width: none;
   padding-right: max(18px, calc((100vw - 1220px) / 2));
@@ -417,8 +416,8 @@ p {
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid rgba(24, 0, 173, 0.18);
-  border-left: 1px solid rgba(24, 0, 173, 0.18);
+  border-top: 1px solid rgba(15, 30, 54, 0.18);
+  border-left: 1px solid rgba(15, 30, 54, 0.18);
 }
 
 .post-card {
@@ -426,8 +425,8 @@ p {
   min-height: 220px;
   flex-direction: column;
   padding: clamp(24px, 3vw, 34px);
-  border-right: 1px solid rgba(24, 0, 173, 0.18);
-  border-bottom: 1px solid rgba(24, 0, 173, 0.18);
+  border-right: 1px solid rgba(15, 30, 54, 0.18);
+  border-bottom: 1px solid rgba(15, 30, 54, 0.18);
   background: rgba(246, 241, 234, 0.44);
 }
 
@@ -445,7 +444,7 @@ p {
   gap: 8px;
   margin-top: auto;
   padding-top: 26px;
-  color: #1800ad;
+  color: #0f1e36;
   font-weight: 800;
   transition: transform 0.25s ease;
 }
@@ -455,7 +454,7 @@ p {
   max-width: none;
   padding-right: max(18px, calc((100vw - 1220px) / 2));
   padding-left: max(18px, calc((100vw - 1220px) / 2));
-  background: #1800ad;
+  background: #0f1e36;
   color: #f9f4ed;
 }
 
@@ -473,7 +472,7 @@ p {
 .limit-card {
   min-height: 200px;
   padding: clamp(24px, 3vw, 36px);
-  border: 1px solid rgba(249, 244, 237, 0.2);
+  border: 1px solid rgba(249, 244, 237, 0.16);
   color: #f9f4ed;
 }
 
@@ -495,7 +494,7 @@ p {
 .step {
   min-height: 0;
   padding: 16px 0 8px;
-  border-top: 1px solid rgba(24, 0, 173, 0.22);
+  border-top: 1px solid rgba(15, 30, 54, 0.22);
 }
 
 .step-number {
@@ -504,9 +503,9 @@ p {
   height: 42px;
   margin-bottom: 18px;
   place-items: center;
-  border: 1px solid rgba(24, 0, 173, 0.24);
+  border: 1px solid rgba(15, 30, 54, 0.24);
   border-radius: 50%;
-  color: #ff6b4a;
+  color: #9d8063;
   font-weight: 800;
 }
 
@@ -533,18 +532,18 @@ p {
   align-items: flex-start;
   gap: 16px;
   padding: 24px;
-  border: 1px solid rgba(24, 0, 173, 0.16);
+  border: 1px solid rgba(15, 30, 54, 0.16);
   background: rgba(255, 255, 255, 0.36);
 }
 
 .education-card svg {
   flex: 0 0 auto;
-  color: #ff6b4a;
+  color: #9d8063;
 }
 
 .document-card {
   overflow: hidden;
-  background: #1800ad;
+  background: #172235;
   color: #f9f4ed;
 }
 
@@ -575,7 +574,7 @@ p {
   gap: 26px;
   align-items: center;
   padding: clamp(26px, 4vw, 44px);
-  background: #1800ad;
+  background: #172235;
   color: #f9f4ed;
 }
 
@@ -588,15 +587,15 @@ p {
 }
 
 .price-value {
-  color: #ffc7b8;
+  color: #d7b996;
   font-size: clamp(48px, 7vw, 94px);
   font-weight: 300;
   white-space: nowrap;
 }
 
 .price-card .primary {
-  background: #ff6b4a;
-  color: #ffffff;
+  background: #f6f1ea;
+  color: #0f1e36;
 }
 
 .faq-list {
@@ -606,11 +605,11 @@ p {
 
 .faq-item {
   overflow: hidden;
-  border-top: 1px solid rgba(24, 0, 173, 0.18);
+  border-top: 1px solid rgba(15, 30, 54, 0.18);
 }
 
 .faq-item:last-child {
-  border-bottom: 1px solid rgba(24, 0, 173, 0.18);
+  border-bottom: 1px solid rgba(15, 30, 54, 0.18);
 }
 
 .faq-item button {
@@ -622,7 +621,7 @@ p {
   padding: 18px 0;
   border: 0;
   background: transparent;
-  color: #1800ad;
+  color: #172235;
   cursor: pointer;
   text-align: left;
 }
@@ -676,7 +675,7 @@ p {
   align-items: center;
   gap: 10px;
   padding: 0 18px;
-  border: 1px solid rgba(24, 0, 173, 0.2);
+  border: 1px solid rgba(15, 30, 54, 0.2);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.42);
   font-weight: 700;
@@ -695,8 +694,8 @@ footer {
   padding: 32px 0 42px;
   justify-content: space-between;
   gap: 28px;
-  border-top: 1px solid rgba(24, 0, 173, 0.18);
-  color: rgba(24, 0, 173, 0.68);
+  border-top: 1px solid rgba(15, 30, 54, 0.18);
+  color: rgba(23, 34, 53, 0.68);
   font-size: 13px;
 }
 
@@ -707,7 +706,7 @@ footer {
 }
 
 .source-notes p {
-  color: rgba(24, 0, 173, 0.68);
+  color: rgba(23, 34, 53, 0.68);
   font-size: 13px;
   line-height: 1.55;
 }
@@ -720,7 +719,7 @@ footer {
 }
 
 .legal-links a {
-  color: #1800ad;
+  color: #172235;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
