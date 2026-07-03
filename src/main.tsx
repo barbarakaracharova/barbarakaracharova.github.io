@@ -63,7 +63,7 @@ const principles = [
 
 const posts = [
   {
-    title: "Не романтизировать расстройства",
+    title: "Романтизация расстройств",
     href: "https://t.me/barbarakaracharovaa/2114",
     text: "О том, почему за эстетикой боли часто теряется реальность БАР, ПРЛ, депрессии, лечения и восстановления.",
   },
@@ -91,6 +91,21 @@ const limits = [
   {
     title: "Я работаю долгосрочно",
     text: "Если запрос связан с устойчивыми паттернами, отношениями, травмой или диагнозами, мы не ищем один быстрый совет.",
+  },
+];
+
+const firstMeeting = [
+  {
+    title: "Спокойно знакомимся",
+    text: "Вы рассказываете, с чем приходите, а я задаю вопросы, чтобы лучше понять контекст и ожидания.",
+  },
+  {
+    title: "Проясняем рамку",
+    text: "Обсуждаем регулярность, формат, границы работы и то, какие темы важно держать бережно.",
+  },
+  {
+    title: "Смотрим, подходим ли друг другу",
+    text: "Первая встреча не обязывает продолжать. Важно, чтобы рядом со мной вам было достаточно спокойно и понятно.",
   },
 ];
 
@@ -159,6 +174,7 @@ function Header() {
         <a href="#about">Обо мне</a>
         <a href="#format">Формат</a>
         <a href="#posts">Тексты</a>
+        <a href="#price">Стоимость</a>
         <a href="#contacts">Контакты</a>
       </nav>
       <a className="header-cta" href={links.booking} target="_blank" rel="noreferrer">
@@ -180,7 +196,7 @@ function Hero() {
       <div className="hero-layout">
         <FadeIn className="hero-copy">
           <span className="cloud" aria-hidden="true" />
-          <p className="kicker">познакомимся?</p>
+          <p className="kicker">Познакомимся?</p>
           <h1>
             Варя
             <br />
@@ -205,16 +221,12 @@ function Hero() {
         <FadeIn className="hero-collage">
           <img src="/images/varia-hero-cinematic.jpg" alt="Варвара Лузан" className="hero-photo" />
           <div className="paper-note">
-            <span>привет. меня зовут Варя</span>
+            <span>Привет. Меня зовут Варя</span>
             <p>Я знакома с диагнозами не только как специалист и верю, что изменения возможны.</p>
           </div>
           <div className="scribble" aria-hidden="true" />
         </FadeIn>
       </div>
-      <p className="footnote">
-        * специалист с подготовкой в психопатологии, который помогает разбираться
-        не только с диагнозами, но и со сложными эмоциональными состояниями.
-      </p>
     </section>
   );
 }
@@ -224,7 +236,7 @@ function Requests() {
     <section id="requests" className="section requests-section">
       <FadeIn className="section-heading">
         <span className="eyebrow">С чем можно прийти</span>
-        <h2>когда внутри много, а слов пока недостаточно</h2>
+        <h2>Когда внутри много, а слов пока недостаточно</h2>
       </FadeIn>
       <div className="request-grid">
         {requests.map((item, index) => (
@@ -246,8 +258,8 @@ function About() {
         <img src="/images/varia-street.jpg" alt="Варвара Лузан на улице" className="about-photo" />
       </FadeIn>
       <FadeIn className="about-copy">
-        <span className="eyebrow">обо мне</span>
-        <h2>я — Варя</h2>
+        <span className="eyebrow">Обо мне</span>
+        <h2>Я — Варя</h2>
         <p>
           Клинический психолог в обучении, мама двоих детей, человек с непростым
           прошлым и длительным опытом личной терапии.
@@ -271,8 +283,8 @@ function Principles() {
   return (
     <section className="section principles-section">
       <FadeIn className="section-heading narrow">
-        <span className="eyebrow">на чем держится работа</span>
-        <h2>без осуждения, но с ясной рамкой</h2>
+        <span className="eyebrow">На чем держится работа</span>
+        <h2>Без осуждения, но с ясной рамкой</h2>
       </FadeIn>
       <div className="principles-grid">
         {principles.map(([title, text]) => (
@@ -291,8 +303,8 @@ function FormatBoundaries() {
   return (
     <section id="format" className="section format-section">
       <FadeIn className="format-intro">
-        <span className="eyebrow">формат</span>
-        <h2>долгосрочная онлайн-терапия в КПТ-подходе</h2>
+        <span className="eyebrow">Формат</span>
+        <h2>Долгосрочная онлайн-терапия в КПТ-подходе</h2>
         <p>
           В работе я использую методы ДБТ и ACT: они помогают глубже работать с
           эмоциями, внутренними конфликтами, ценностями и острыми состояниями.
@@ -311,12 +323,32 @@ function FormatBoundaries() {
   );
 }
 
+function FirstMeeting() {
+  return (
+    <section className="section first-meeting">
+      <FadeIn className="section-heading narrow">
+        <span className="eyebrow">Первая встреча</span>
+        <h2>Как проходит начало работы</h2>
+      </FadeIn>
+      <div className="meeting-grid">
+        {firstMeeting.map((item, index) => (
+          <FadeIn className="meeting-card" key={item.title}>
+            <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Posts() {
   return (
     <section id="posts" className="section posts-section">
       <FadeIn className="section-heading">
-        <span className="eyebrow">полезное</span>
-        <h2>тексты, по которым можно почувствовать мой язык</h2>
+        <span className="eyebrow">Полезное</span>
+        <h2>Тексты, по которым можно почувствовать мой язык</h2>
       </FadeIn>
       <div className="posts-grid">
         {posts.map((post, index) => (
@@ -338,8 +370,8 @@ function Education() {
   return (
     <section className="section education">
       <FadeIn className="section-heading narrow">
-        <span className="eyebrow">образование и документы</span>
-        <h2>обучение и профессиональная подготовка</h2>
+        <span className="eyebrow">Образование и документы</span>
+        <h2>Обучение и профессиональная подготовка</h2>
       </FadeIn>
       <div className="education-layout">
         <div className="education-list">
@@ -366,8 +398,8 @@ function Price() {
     <section id="price" className="section price-section">
       <FadeIn className="price-card">
         <div>
-          <span className="eyebrow">стоимость</span>
-          <h2>онлайн-сессия</h2>
+          <span className="eyebrow">Стоимость</span>
+          <h2>Онлайн-сессия</h2>
           <p>Запись через форму. Стоимость одной консультации.</p>
         </div>
         <div className="price-value">4000 ₽</div>
@@ -385,7 +417,7 @@ function FAQ() {
     <section className="section faq">
       <FadeIn className="section-heading narrow">
         <span className="eyebrow">FAQ</span>
-        <h2>перед первой встречей</h2>
+        <h2>Перед первой встречей</h2>
       </FadeIn>
       <div className="faq-list">
         {faq.map((item, index) => (
@@ -418,8 +450,8 @@ function Contacts() {
   return (
     <section id="contacts" className="section contacts">
       <FadeIn className="contact-copy">
-        <span className="eyebrow">контакты</span>
-        <h2>познакомимся?</h2>
+        <span className="eyebrow">Контакты</span>
+        <h2>Познакомимся?</h2>
         <p>
           Самый прямой путь — форма записи. Для живого контекста и публикаций можно
           перейти в Telegram или Instagram*.
@@ -513,6 +545,7 @@ function App() {
         <About />
         <Principles />
         <FormatBoundaries />
+        <FirstMeeting />
         <Posts />
         <Education />
         <Price />
