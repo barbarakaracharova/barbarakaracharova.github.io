@@ -8,7 +8,6 @@ import {
   FileText,
   Instagram,
   MessageCircle,
-  Sparkles,
 } from "lucide-react";
 import "./styles.css";
 
@@ -145,6 +144,10 @@ function keep(text: string) {
     .replace(/когнитивно-поведенческая терапия/gi, (match) => match.replace(" ", "\u00a0"));
 }
 
+function NoBreak({ children }: { children: React.ReactNode }) {
+  return <span className="nowrap">{children}</span>;
+}
+
 function FadeIn({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <motion.div
@@ -212,7 +215,7 @@ function Hero() {
       </div>
       <div className="hero-layout">
         <FadeIn className="hero-copy">
-          <p className="kicker">Знакомство</p>
+          <div className="hero-cloud" aria-hidden="true" />
           <h1>
             Варя
             <br />
@@ -222,7 +225,7 @@ function Hero() {
           </h1>
           <p className="lead">
             {keep(
-              "Пространство, где можно говорить о БАР, ПРЛ, КПТСР, СДВГ, стыде, привязанности и эмоциональных качелях без попытки срочно стать «нормальной».",
+              "Помогаю не стать другим человеком, а лучше понять того, кем вы уже являетесь.",
             )}
           </p>
           <div className="actions">
@@ -236,7 +239,7 @@ function Hero() {
           <div className="hero-photo-frame">
             <img src="/images/varia-hero-cinematic.jpg" alt="Варвара Лузан" className="hero-photo" />
             <p className="portrait-caption">
-              {keep("Я знаю многие переживания не только как специалист, но и как человек.")}
+              {keep("Я знаю многие переживания не только как специалист, но\u00a0и\u00a0как человек.")}
             </p>
           </div>
         </FadeIn>
@@ -274,8 +277,8 @@ function Philosophy() {
           <strong>Некоторые вещи вообще не нужно чинить.</strong>
           <span>
             Какие-то части себя нужно понимать, какие-то — принимать, какие-то —
-            учиться учитывать, а какие-то вообще оказываются не поломкой,
-            а обычным человеческим опытом.
+            учиться учитывать, а какие-то вообще оказываются не поломкой,{" "}
+            <NoBreak>а обычным человеческим опытом.</NoBreak>
           </span>
         </blockquote>
       </FadeIn>
@@ -293,14 +296,14 @@ function About() {
         <span className="eyebrow">Обо мне</span>
         <h2>Я — Варя</h2>
         <p>
-          {keep(
-            "Клинический психолог, мама двоих детей, человек с непростым прошлым и длительным опытом личной терапии.",
-          )}
+          Клинический психолог, мама двоих детей, человек{" "}
+          <NoBreak>с непростым прошлым и длительным</NoBreak> опытом личной терапии.
         </p>
         <p>
-          {keep(
-            "Я открыто говорю о жизни с БАР и ПРЛ не потому, что строю вокруг этого идентичность. Это часть моего профессионального пути и человеческого опыта, который помогает мне быть внимательной к чужой боли без романтизации диагнозов.",
-          )}
+          Я открыто говорю о жизни с БАР и ПРЛ не потому, что строю вокруг этого
+          идентичность. Это часть моего профессионального{" "}
+          <NoBreak>пути и человеческого опыта,</NoBreak> который помогает мне быть
+          внимательной к чужой боли без романтизации диагнозов.
         </p>
         <p className="soft-note">
           {keep("В работе для меня важны ясность, бережность, честность и уважение к вашим границам.")}
@@ -332,7 +335,7 @@ function Format() {
         <div className="format-copy">
           {principles.map(([title, text]) => (
             <FadeIn className="principle-line" key={title}>
-              <Sparkles size={18} aria-hidden="true" />
+              <span className="note-mark" aria-hidden="true" />
               <div>
                 <h3>{title}</h3>
                 <p>{keep(text)}</p>
@@ -341,7 +344,9 @@ function Format() {
           ))}
         </div>
         <FadeIn className="format-aside">
-          <span>В терапии мы не ищем один быстрый совет.</span>
+          <span>
+            <NoBreak>В терапии мы не ищем</NoBreak> один быстрый совет.
+          </span>
           <p>{keep("Мы постепенно замечаем повторяющиеся реакции и собираем способы жить устойчивее.")}</p>
           <CTA variant="secondary" label="Обсудить формат" />
         </FadeIn>
@@ -361,7 +366,15 @@ function FirstMeeting() {
         {firstMeeting.map((item, index) => (
           <FadeIn className="meeting-card" key={item.title}>
             <span className="timeline-number">{String(index + 1).padStart(2, "0")}</span>
-            <h3>{item.title}</h3>
+            <h3>
+              {item.title === "Договариваемся о процессе" ? (
+                <>
+                  Договариваемся <NoBreak>о процессе</NoBreak>
+                </>
+              ) : (
+                item.title
+              )}
+            </h3>
             <p>{keep(item.text)}</p>
           </FadeIn>
         ))}
@@ -418,14 +431,27 @@ function Library() {
     <section id="library" className="section library-section">
       <FadeIn className="section-heading split-heading">
         <span className="eyebrow">Библиотека</span>
-        <h2>Библиотека текстов, по которым можно почувствовать мой язык</h2>
+        <h2>
+          Тексты, в которых можно
+          <br />
+          встретиться с собой
+        </h2>
       </FadeIn>
       <div className="library-grid">
         {library.map((post) => (
           <FadeIn className="library-card" key={post.href}>
             <span>Telegram</span>
             <h3>{post.title}</h3>
-            <p>{keep(post.text)}</p>
+            <p>
+              {post.title === "Почему ремиссия может пугать" ? (
+                <>
+                  Про потерю привычной версии себя <NoBreak>и необходимость</NoBreak>{" "}
+                  строить идентичность не вокруг боли.
+                </>
+              ) : (
+                keep(post.text)
+              )}
+            </p>
             <a href={post.href} target="_blank" rel="noreferrer">
               Читать <ArrowUpRight size={17} aria-hidden="true" />
             </a>
