@@ -23,20 +23,36 @@ const links = {
 
 const requests = [
   {
-    title: "БАР и перепады состояний",
-    text: "Когда важно выстраивать устойчивость, распознавать ранние сигналы и не сводить себя к диагнозу.",
+    title: "БАР, ПРЛ, КПТСР",
+    text: "Когда важно видеть за диагнозом не ярлык, а живой опыт, реакции, историю и способы опоры.",
   },
   {
-    title: "ПРЛ и отношения",
-    text: "Страх быть оставленной, резкие реакции, эмоциональная зависимость и поиск более безопасного контакта.",
+    title: "Эмоциональные качели",
+    text: "Резкие перепады состояния, импульсивность, усталость от себя и попытки выдерживать больше, чем есть сил.",
   },
   {
-    title: "КПТСР и травматичный опыт",
-    text: "Стыд, настороженность, сложность доверять, телесное напряжение и жизнь после длительного стресса.",
+    title: "Отношения и привязанность",
+    text: "Страх быть оставленной, эмоциональная зависимость, сложность доверять и поиск более безопасного контакта.",
   },
   {
-    title: "СДВГ, тревога, депрессия",
-    text: "Расфокус, перегруз, апатия, импульсивность и ощущение, что обычная жизнь требует слишком много сил.",
+    title: "Тревога и депрессивные состояния",
+    text: "Напряжение, апатия, потеря опоры, перегруз и ощущение, что обычная жизнь требует слишком много сил.",
+  },
+  {
+    title: "Стыд и внутренняя критика",
+    text: "Когда внутри много самообвинения, сравнения, чувства неправильности и страха быть замеченной.",
+  },
+  {
+    title: "Кризисы и самоподдержка",
+    text: "Периоды, где важно не остаться одной с острым состоянием и собрать понятные способы пережить волну.",
+  },
+  {
+    title: "«Со мной что-то не так»",
+    text: "Ощущение поломки, чуждости себе, внутренней пустоты и сложности назвать то, что происходит.",
+  },
+  {
+    title: "СДВГ и расфокус",
+    text: "Хаос в задачах, трудность удерживать внимание, перегруз от быта и поиск более бережной организации жизни.",
   },
 ];
 
@@ -48,7 +64,7 @@ const principles = [
 
 const firstMeeting = [
   {
-    title: "Спокойно знакомимся",
+    title: "Знакомимся",
     text: "Вы рассказываете, что сейчас болит и чего хочется от работы. Я задаю вопросы, чтобы лучше понять контекст.",
   },
   {
@@ -196,7 +212,7 @@ function Hero() {
       </div>
       <div className="hero-layout">
         <FadeIn className="hero-copy">
-          <p className="kicker">Познакомимся?</p>
+          <p className="kicker">Знакомство</p>
           <h1>
             Варя
             <br />
@@ -217,10 +233,12 @@ function Hero() {
           </div>
         </FadeIn>
         <FadeIn className="hero-portrait">
-          <img src="/images/varia-hero-cinematic.jpg" alt="Варвара Лузан" className="hero-photo" />
-          <p className="portrait-caption">
-            {keep("Я знаю многие переживания не только как специалист, но и как человек.")}
-          </p>
+          <div className="hero-photo-frame">
+            <img src="/images/varia-hero-cinematic.jpg" alt="Варвара Лузан" className="hero-photo" />
+            <p className="portrait-caption">
+              {keep("Я знаю многие переживания не только как специалист, но и как человек.")}
+            </p>
+          </div>
         </FadeIn>
       </div>
     </section>
@@ -232,7 +250,7 @@ function Requests() {
     <section id="requests" className="section requests-section">
       <FadeIn className="section-heading split-heading">
         <span className="eyebrow">С чем можно прийти</span>
-        <h2>Не диагноз в центре, а человек внутри своего опыта</h2>
+        <h2>За диагнозом всегда остается человек</h2>
       </FadeIn>
       <div className="request-grid compact-grid">
         {requests.map((item, index) => (
@@ -253,9 +271,12 @@ function Philosophy() {
       <FadeIn className="philosophy-inner">
         <span className="eyebrow">Главная мысль</span>
         <blockquote>
-          Некоторые вещи вообще не нужно чинить. Какие-то части себя нужно понимать,
-          какие-то — принимать, какие-то — учиться учитывать, а какие-то вообще
-          оказываются не поломкой, а обычным человеческим опытом.
+          <strong>Некоторые вещи вообще не нужно чинить.</strong>
+          <span>
+            Какие-то части себя нужно понимать, какие-то — принимать, какие-то —
+            учиться учитывать, а какие-то вообще оказываются не поломкой,
+            а обычным человеческим опытом.
+          </span>
         </blockquote>
       </FadeIn>
     </section>
@@ -336,14 +357,12 @@ function FirstMeeting() {
         <span className="eyebrow">Первая встреча</span>
         <h2>Как проходит начало работы</h2>
       </FadeIn>
-      <div className="timeline">
+      <div className="meeting-grid">
         {firstMeeting.map((item, index) => (
-          <FadeIn className="timeline-item" key={item.title}>
+          <FadeIn className="meeting-card" key={item.title}>
             <span className="timeline-number">{String(index + 1).padStart(2, "0")}</span>
-            <div>
-              <h3>{item.title}</h3>
-              <p>{keep(item.text)}</p>
-            </div>
+            <h3>{item.title}</h3>
+            <p>{keep(item.text)}</p>
           </FadeIn>
         ))}
       </div>
@@ -356,7 +375,7 @@ function Learning() {
     <section className="section learning-section">
       <FadeIn className="section-heading editorial-heading">
         <span className="eyebrow">На что я опираюсь</span>
-        <h2>Хороший психолог учится всю жизнь</h2>
+        <h2>На что я опираюсь в работе</h2>
         <p>
           {keep(
             "За моей работой стоят образование, клиническая подготовка, супервизии, личная терапия и постоянное развитие.",
@@ -376,7 +395,15 @@ function Learning() {
           ))}
         </div>
         <FadeIn className="document-card">
-          <img src="/docs/akpp.jpg" alt="Документ о членстве в АКПП" loading="lazy" />
+          <div className="document-stack" aria-hidden="true">
+            <img src="/docs/akpp.jpg" alt="" loading="lazy" />
+            <img src="/docs/akpp.jpg" alt="" loading="lazy" />
+            <img src="/docs/akpp.jpg" alt="" loading="lazy" />
+          </div>
+          <div className="document-copy">
+            <span>Документы</span>
+            <h3>Дипломы и сертификаты</h3>
+          </div>
           <a href={links.docs} target="_blank" rel="noreferrer">
             Открыть документы <FileText size={18} aria-hidden="true" />
           </a>
@@ -391,7 +418,7 @@ function Library() {
     <section id="library" className="section library-section">
       <FadeIn className="section-heading split-heading">
         <span className="eyebrow">Библиотека</span>
-        <h2>Тексты, по которым можно почувствовать мой язык</h2>
+        <h2>Библиотека текстов, по которым можно почувствовать мой язык</h2>
       </FadeIn>
       <div className="library-grid">
         {library.map((post) => (
@@ -457,7 +484,7 @@ function FAQ() {
         ))}
       </div>
       <FadeIn className="section-cta">
-        <CTA variant="quiet" label="Записаться спокойно" />
+        <CTA variant="quiet" label="Записаться на встречу" />
       </FadeIn>
     </section>
   );
@@ -468,9 +495,9 @@ function Contacts() {
     <section id="contacts" className="section contacts">
       <FadeIn className="contact-copy">
         <span className="eyebrow">Контакты</span>
-        <h2>Познакомимся?</h2>
+        <h2>Если вам близок мой подход</h2>
         <p>
-          {keep("Самый прямой путь — форма записи. Для живого контекста и публикаций можно перейти в Telegram или Instagram*.")}
+          {keep("Оставьте заявку или перейдите в Telegram — там можно лучше почувствовать мой язык и стиль работы.")}
         </p>
         <div className="contact-links">
           <a href={links.booking} target="_blank" rel="noreferrer">
