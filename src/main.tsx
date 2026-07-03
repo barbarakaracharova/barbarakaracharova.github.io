@@ -8,7 +8,6 @@ import {
   FileText,
   Instagram,
   MessageCircle,
-  Shield,
   Sparkles,
 } from "lucide-react";
 import "./styles.css";
@@ -24,90 +23,74 @@ const links = {
 
 const requests = [
   {
-    title: "Эмоциональная нестабильность",
-    text: "Когда реакции становятся слишком сильными, быстро появляется стыд, вина, злость или страх отвержения, а потом сложно вернуться в устойчивое состояние.",
-  },
-  {
     title: "БАР, ПРЛ, ПТСР",
-    text: "Опыт жизни с диагнозом, ремиссия, страх срыва, отношения с лечением, навыки самоподдержки и попытка построить жизнь не вокруг кризиса.",
+    text: "Когда диагноз становится не ярлыком, а частью опыта, с которым хочется научиться жить устойчивее.",
   },
   {
-    title: "Тревога и депрессивные состояния",
-    text: (
-      <>
-        Навязчивые мысли, напряжение, апатия, ощущение бессилия,
-        <br />
-        потеря контакта с желаниями и с собственной жизнью.
-      </>
-    ),
-  },
-  {
-    title: "Стыд, вина и внутренняя критика",
-    text: "Ощущение, что с вами что-то фундаментально не так, постоянная попытка себя чинить, заслуживать право быть собой.",
+    title: "Эмоциональные качели",
+    text: "Перепады состояний, импульсивность, пустота, стыд после реакций и ощущение, что внутри слишком много.",
   },
   {
     title: "Отношения и привязанность",
-    text: "Страх близости и отвержения, зависимость от реакции другого человека, сложные расставания, созависимость и потеря контакта с собой.",
+    text: "Страх быть брошенной, эмоциональная зависимость, болезненные расставания и поиск себя вне чужой реакции.",
   },
   {
-    title: "Границы и злость",
-    text: "Когда злость кажется опасной для отношений, а границы путаются с агрессией, конфликтом или чувством вины.",
+    title: "Тревога и депрессивные состояния",
+    text: "Навязчивые мысли, апатия, напряжение, хронический стресс и потеря контакта с желаниями.",
   },
   {
-    title: "Одиночество и идентичность",
-    text: "Пустота, вопрос «кто я вообще», нехватка живого контакта, сложность собирать себя вне ролей, диагноза или чужих ожиданий.",
+    title: "Стыд и внутренняя критика",
+    text: "Когда кажется, что с вами что-то фундаментально не так, и приходится постоянно заслуживать право быть собой.",
   },
   {
-    title: "Самоповреждение в анамнезе",
-    text: "Бережная работа с опытом сильного напряжения, стыда после реакций и поиском более безопасных способов справляться.",
+    title: "Кризисы и самоподдержка",
+    text: "Навыки ДБТ, которые помогают переживать острые состояния, выдерживать жизнь и возвращаться к опоре.",
   },
+];
+
+const notes = [
+  "клинический психолог в обучении",
+  "КПТ + ДБТ + ACT",
+  "член Ассоциации АКПП",
+  "долгосрочная онлайн-терапия",
+];
+
+const principles = [
+  ["Безоценочность", "Можно говорить о сложном без страха, что вас будут чинить, стыдить или торопить."],
+  ["Честность", "Я не обещаю быстрых чудес, но помогаю искать устойчивые шаги и понятную рамку."],
+  ["Уважение", "У каждой истории есть контекст. Мне важно услышать его, а не подогнать человека под шаблон."],
 ];
 
 const posts = [
   {
     title: "Не романтизировать расстройства",
     href: "https://t.me/barbarakaracharovaa/2114",
-    text: "О том, почему за эстетикой боли часто теряется реальность БАР, ПРЛ, депрессии, лечения и ежедневного восстановления.",
+    text: "О том, почему за эстетикой боли часто теряется реальность БАР, ПРЛ, депрессии, лечения и восстановления.",
   },
   {
     title: "Почему ремиссия может пугать",
     href: "https://t.me/barbarakaracharovaa/2117",
-    text: "Про потерю привычной версии себя, знакомость срыва и необходимость строить идентичность не вокруг боли.",
-  },
-  {
-    title: "Созависимость, стыд и потеря себя",
-    href: "https://t.me/barbarakaracharovaa/2118",
-    text: "Разбор книги и механизмов жизни через другого человека: подстройка, спасательство, эмоциональное сканирование.",
+    text: "Про потерю привычной версии себя и необходимость строить идентичность не вокруг боли.",
   },
   {
     title: "Не все нужно чинить",
     href: "https://t.me/barbarakaracharovaa/2135",
-    text: "О терапии не как о бесконечном ремонте себя, а как о способе понимать, принимать и учитывать разные части опыта.",
-  },
-  {
-    title: "Злость после дисфункционального опыта",
-    href: "https://t.me/barbarakaracharovaa/2136",
-    text: "Про злость, месть, границы, бессилие и боль у людей, выросших в семьях с насилием, унижением или пренебрежением.",
-  },
-  {
-    title: "Внимание и близость — не одно и то же",
-    href: "https://t.me/barbarakaracharovaa/2133",
-    text: "О взрослом одиночестве, дружбе, блоге, границах и устойчивости, которая строится через разные связи.",
+    text: "О терапии как способе понимать, принимать и учитывать разные части опыта.",
   },
 ];
 
 const limits = [
   {
-    title: "Я не работаю единоразово",
-    text: "Одна встреча может помочь познакомиться и обозначить запрос, но глубокая психологическая работа требует регулярности и времени.",
-  },
-  {
     title: "Я не психиатр",
-    text: "Я не ставлю медицинские диагнозы и не назначаю медикаменты. При необходимости могу рекомендовать обратиться к врачу-психиатру.",
+    text: "Я не назначаю и не отменяю медикаменты, не подбираю лечение и не ставлю медицинские диагнозы.",
   },
   {
-    title: "Я не работаю краткосрочно",
-    text: "Если запрос связан с устойчивыми паттернами, травматичным опытом, БАР, ПРЛ, ПТСР или отношениями, мы планируем не быстрый совет, а процесс.",
+    title: "Я не разбираю клинические случаи в личных сообщениях",
+    text: "Для этого есть терапевтический процесс с рамкой, регулярностью и ответственностью.",
+  },
+  {
+    title: "Я работаю долгосрочно",
+    text: "Если запрос связан с устойчивыми паттернами, отношениями, травмой или диагнозами, мы не ищем один быстрый совет.",
   },
 ];
 
@@ -139,15 +122,8 @@ const faq = [
   },
 ];
 
-const steps = [
-  ["Запись", "Вы оставляете заявку через форму, выбираете удобный способ связи и время."],
-  ["Первая встреча", "Мы знакомимся, обсуждаем запрос и смотрим, насколько вам подходит мой формат работы."],
-  ["Регулярная работа", "Исследуем переживания, реакции, отношения, повторяющиеся сценарии и способы выдерживать напряжение."],
-  ["Опора", "Постепенно появляется больше ясности, навыков, контакта с собой и устойчивости в повседневной жизни."],
-];
-
 const reveal = {
-  hidden: { opacity: 0, y: 22, scale: 0.985 },
+  hidden: { opacity: 0, y: 18, scale: 0.99 },
   visible: { opacity: 1, y: 0, scale: 1 },
 };
 
@@ -159,7 +135,7 @@ function FadeIn({ children, className = "" }: { children: React.ReactNode; class
       whileInView="visible"
       viewport={{ once: true, margin: "-90px" }}
       variants={reveal}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -172,29 +148,6 @@ function Progress() {
   return <motion.div className="reading-progress" style={{ scaleX }} />;
 }
 
-function ParallaxImage({
-  src,
-  alt,
-  className,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-}) {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [-10, 16]);
-  return (
-    <motion.img
-      style={{ y }}
-      src={src}
-      alt={alt}
-      loading="lazy"
-      decoding="async"
-      className={className}
-    />
-  );
-}
-
 function Header() {
   return (
     <header className="site-header">
@@ -203,9 +156,9 @@ function Header() {
       </a>
       <nav aria-label="Основная навигация">
         <a href="#requests">Запросы</a>
-        <a href="#posts">Посты</a>
+        <a href="#about">Обо мне</a>
         <a href="#format">Формат</a>
-        <a href="#price">Стоимость</a>
+        <a href="#posts">Тексты</a>
         <a href="#contacts">Контакты</a>
       </nav>
       <a className="header-cta" href={links.booking} target="_blank" rel="noreferrer">
@@ -217,48 +170,51 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="hero section">
-      <FadeIn className="hero-copy">
-        <span className="eyebrow">Клинический психолог с личной историей</span>
-        <h1>
-          Варвара
-          <br />
-          Лузан
-        </h1>
-        <p className="lead">
-          Пространство для разговора о&nbsp;том, что обычно сложно объяснить без стыда,
-          самозащиты и попытки срочно стать «нормальным».
-        </p>
-        <p>
-          Работаю в КПТ-подходе с использованием ДБТ и ACT. Много&nbsp;пишу&nbsp;о БАР, ПРЛ,
-          ПТСР, отношениях, стыде, границах и восстановлении.
-        </p>
-        <div className="hero-meta">
-          <span>онлайн</span>
-          <span>4000 ₽</span>
-          <span>регулярная работа</span>
-        </div>
-        <div className="actions">
-          <a className="button primary" href={links.booking} target="_blank" rel="noreferrer">
-            Записаться <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
-          <a className="button secondary" href={links.telegram} target="_blank" rel="noreferrer">
-            Telegram <MessageCircle size={18} aria-hidden="true" />
-          </a>
-        </div>
-      </FadeIn>
-      <FadeIn className="hero-visual">
-        <img
-          src="/images/hero.webp"
-          alt="Варвара Лузан"
-          className="hero-image"
-          loading="eager"
-          decoding="async"
-        />
-        <div className="hero-caption">
-          <span>перевожу ощущения, которым человек никогда не мог найти слова</span>
-        </div>
-      </FadeIn>
+    <section id="top" className="hero">
+      <div className="hero-topline">
+        <span>Варвара Лузан</span>
+        <a href={links.telegram} target="_blank" rel="noreferrer">
+          TG: @barbarakaracharovaa
+        </a>
+      </div>
+      <div className="hero-layout">
+        <FadeIn className="hero-copy">
+          <span className="cloud" aria-hidden="true" />
+          <p className="kicker">познакомимся?</p>
+          <h1>
+            Варя
+            <br />
+            клинический
+            <br />
+            психолог
+          </h1>
+          <p className="lead">
+            Пространство, где можно говорить о БАР, ПРЛ, ПТСР, стыде,
+            привязанности и эмоциональных качелях без попытки срочно стать
+            «нормальной».
+          </p>
+          <div className="actions">
+            <a className="button primary" href={links.booking} target="_blank" rel="noreferrer">
+              Записаться <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+            <a className="button secondary" href={links.telegram} target="_blank" rel="noreferrer">
+              Telegram <MessageCircle size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </FadeIn>
+        <FadeIn className="hero-collage">
+          <img src="/images/varia-hero-cinematic.jpg" alt="Варвара Лузан" className="hero-photo" />
+          <div className="paper-note">
+            <span>привет. меня зовут Варя</span>
+            <p>Я знакома с диагнозами не только как специалист и верю, что изменения возможны.</p>
+          </div>
+          <div className="scribble" aria-hidden="true" />
+        </FadeIn>
+      </div>
+      <p className="footnote">
+        * специалист с подготовкой в психопатологии, который помогает разбираться
+        не только с диагнозами, но и со сложными эмоциональными состояниями.
+      </p>
     </section>
   );
 }
@@ -266,22 +222,14 @@ function Hero() {
 function Requests() {
   return (
     <section id="requests" className="section requests-section">
-      <FadeIn className="section-heading split-heading">
-        <span className="eyebrow">С какими запросами можно прийти</span>
-        <h2>
-          Когда внутри
-          <br />
-          слишком много,
-          <br />
-          а&nbsp;слов пока
-          <br />
-          недостаточно
-        </h2>
+      <FadeIn className="section-heading">
+        <span className="eyebrow">С чем можно прийти</span>
+        <h2>когда внутри много, а слов пока недостаточно</h2>
       </FadeIn>
-      <div className="request-list">
+      <div className="request-grid">
         {requests.map((item, index) => (
-          <FadeIn className="request-row" key={item.title}>
-            <span className="row-number">[{String(index + 1).padStart(2, "0")}]</span>
+          <FadeIn className="request-card" key={item.title}>
+            <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </FadeIn>
@@ -291,33 +239,73 @@ function Requests() {
   );
 }
 
-function Approach() {
+function About() {
   return (
-    <section id="approach" className="section approach">
-      <FadeIn className="quote-block">
-        <Shield size={24} aria-hidden="true" />
-        <h2>
-          Почему
-          <br />
-          ко мне
-          <br />
-          приходят
-        </h2>
-        <p>
-          «Какие‑то части себя нужно понимать, какие‑то — принимать, какие‑то —
-          учиться учитывать, а какие‑то вообще оказываются не поломкой, а обычным
-          человеческим опытом».
-        </p>
-        <a href="https://t.me/barbarakaracharovaa/2135" target="_blank" rel="noreferrer">
-          Читать пост в Telegram
-        </a>
+    <section id="about" className="section about-section">
+      <FadeIn className="about-photo-wrap">
+        <img src="/images/varia-street.jpg" alt="Варвара Лузан на улице" className="about-photo" />
       </FadeIn>
-      <div className="approach-side">
-        <ParallaxImage
-          src="/images/portrait.webp"
-          alt="Портрет Варвары Лузан"
-          className="soft-photo"
-        />
+      <FadeIn className="about-copy">
+        <span className="eyebrow">обо мне</span>
+        <h2>я — Варя</h2>
+        <p>
+          Клинический психолог в обучении, мама двоих детей, человек с непростым
+          прошлым и длительным опытом личной терапии.
+        </p>
+        <p>
+          Сейчас я в ремиссии БАР, а критерии ПРЛ скомпенсированы. Возможно,
+          поэтому я слишком хорошо знаю, насколько безнадежными могут казаться
+          эти состояния — и насколько на самом деле возможны изменения.
+        </p>
+        <div className="note-list">
+          {notes.map((note) => (
+            <span key={note}>{note}</span>
+          ))}
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+function Principles() {
+  return (
+    <section className="section principles-section">
+      <FadeIn className="section-heading narrow">
+        <span className="eyebrow">на чем держится работа</span>
+        <h2>без осуждения, но с ясной рамкой</h2>
+      </FadeIn>
+      <div className="principles-grid">
+        {principles.map(([title, text]) => (
+          <FadeIn className="principle-card" key={title}>
+            <Sparkles size={20} aria-hidden="true" />
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FormatBoundaries() {
+  return (
+    <section id="format" className="section format-section">
+      <FadeIn className="format-intro">
+        <span className="eyebrow">формат</span>
+        <h2>долгосрочная онлайн-терапия в КПТ-подходе</h2>
+        <p>
+          В работе я использую методы ДБТ и ACT: они помогают глубже работать с
+          эмоциями, внутренними конфликтами, ценностями и острыми состояниями.
+        </p>
+      </FadeIn>
+      <div className="limits-grid">
+        {limits.map((item, index) => (
+          <FadeIn className="limit-card" key={item.title}>
+            <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </FadeIn>
+        ))}
       </div>
     </section>
   );
@@ -326,14 +314,14 @@ function Approach() {
 function Posts() {
   return (
     <section id="posts" className="section posts-section">
-      <FadeIn className="section-heading split-heading">
-        <span className="eyebrow">Важные посты</span>
-        <h2>Тексты, по которым можно почувствовать мой язык и темы</h2>
+      <FadeIn className="section-heading">
+        <span className="eyebrow">полезное</span>
+        <h2>тексты, по которым можно почувствовать мой язык</h2>
       </FadeIn>
       <div className="posts-grid">
         {posts.map((post, index) => (
           <FadeIn className="post-card" key={post.href}>
-            <span className="row-number">[{String(index + 1).padStart(2, "0")}]</span>
+            <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
             <h3>{post.title}</h3>
             <p>{post.text}</p>
             <a href={post.href} target="_blank" rel="noreferrer">
@@ -346,57 +334,12 @@ function Posts() {
   );
 }
 
-function FormatBoundaries() {
-  return (
-    <section id="format" className="section format-section">
-      <FadeIn className="format-intro">
-        <span className="eyebrow">Важно про формат</span>
-        <h2>Я работаю не в логике быстрых советов</h2>
-      </FadeIn>
-      <div className="limits-grid">
-        {limits.map((item, index) => (
-          <FadeIn className="limit-card" key={item.title}>
-            <span className="row-number">[{String(index + 1).padStart(2, "0")}]</span>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </FadeIn>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Process() {
-  return (
-    <section className="section process-section">
-      <FadeIn className="section-heading narrow">
-        <span className="eyebrow">Как проходят консультации</span>
-        <h2>
-          Без спешки.
-          <br />
-          С ясной рамкой.
-          <br />В контакте.
-        </h2>
-      </FadeIn>
-      <div className="steps">
-        {steps.map(([title, text], index) => (
-          <FadeIn className="step" key={title}>
-            <span className="step-number">{index + 1}</span>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </FadeIn>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function Education() {
   return (
     <section className="section education">
-      <FadeIn className="section-heading">
-        <span className="eyebrow">Образование и документы</span>
-        <h2>Обучение и профессиональная подготовка</h2>
+      <FadeIn className="section-heading narrow">
+        <span className="eyebrow">образование и документы</span>
+        <h2>обучение и профессиональная подготовка</h2>
       </FadeIn>
       <div className="education-layout">
         <div className="education-list">
@@ -423,8 +366,8 @@ function Price() {
     <section id="price" className="section price-section">
       <FadeIn className="price-card">
         <div>
-          <span className="eyebrow">Стоимость</span>
-          <h2>Онлайн-сессия</h2>
+          <span className="eyebrow">стоимость</span>
+          <h2>онлайн-сессия</h2>
           <p>Запись через форму. Стоимость одной консультации.</p>
         </div>
         <div className="price-value">4000 ₽</div>
@@ -442,7 +385,7 @@ function FAQ() {
     <section className="section faq">
       <FadeIn className="section-heading narrow">
         <span className="eyebrow">FAQ</span>
-        <h2>Перед первой встречей</h2>
+        <h2>перед первой встречей</h2>
       </FadeIn>
       <div className="faq-list">
         {faq.map((item, index) => (
@@ -475,8 +418,8 @@ function Contacts() {
   return (
     <section id="contacts" className="section contacts">
       <FadeIn className="contact-copy">
-        <Sparkles size={24} aria-hidden="true" />
-        <h2>Контакты</h2>
+        <span className="eyebrow">контакты</span>
+        <h2>познакомимся?</h2>
         <p>
           Самый прямой путь — форма записи. Для живого контекста и публикаций можно
           перейти в Telegram или Instagram*.
@@ -493,7 +436,9 @@ function Contacts() {
           </a>
         </div>
       </FadeIn>
-      <ParallaxImage src="/images/contact.webp" alt="Варвара Лузан" className="contact-photo" />
+      <FadeIn className="contact-portrait">
+        <img src="/images/varia-close.jpg" alt="Портрет Варвары Лузан" />
+      </FadeIn>
     </section>
   );
 }
@@ -506,9 +451,9 @@ function JsonLd() {
         {
           "@type": ["Person", "Psychologist"],
           name: "Варвара Лузан",
-          alternateName: "barbari",
+          alternateName: "Варя",
           jobTitle: "Клинический психолог",
-          image: "/images/og.jpg",
+          image: "/images/varia-hero-cinematic.jpg",
           url: links.instagram,
           sameAs: [links.instagram, links.telegram],
           knowsAbout: ["КПТ", "ДБТ", "ACT", "ПРЛ", "БАР", "ПТСР", "созависимость"],
@@ -565,10 +510,10 @@ function App() {
       <main>
         <Hero />
         <Requests />
-        <Approach />
-        <Posts />
+        <About />
+        <Principles />
         <FormatBoundaries />
-        <Process />
+        <Posts />
         <Education />
         <Price />
         <FAQ />
