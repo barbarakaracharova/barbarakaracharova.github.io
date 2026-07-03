@@ -15,7 +15,7 @@ import "./styles.css";
 const links = {
   booking: "https://forms.gle/uEQjb3G1icpALYnp9",
   telegram: "https://t.me/barbarakaracharovaa",
-  instagram: "https://www.instagram.com/se_live_psychology",
+  instagram: "https://www.instagram.com/barbarakaracharova.a",
   docs: "https://drive.google.com/drive/folders/1oplxtSNpSCYeQsyoCgzILNulmMn6hGnl?usp=sharing",
   privacy: "privacy.html",
   offer: "offer.html",
@@ -23,49 +23,64 @@ const links = {
 
 const requests = [
   {
-    title: "БАР, ПРЛ, ПТСР",
-    text: "Когда диагноз становится не ярлыком, а частью опыта, с которым хочется научиться жить устойчивее.",
+    title: "БАР и перепады состояний",
+    text: "Когда важно выстраивать устойчивость, распознавать ранние сигналы и не сводить себя к диагнозу.",
   },
   {
-    title: "Эмоциональные качели",
-    text: "Перепады состояний, импульсивность, пустота, стыд после реакций и ощущение, что внутри слишком много.",
+    title: "ПРЛ и отношения",
+    text: "Страх быть оставленной, резкие реакции, эмоциональная зависимость и поиск более безопасного контакта.",
   },
   {
-    title: "Отношения и привязанность",
-    text: "Страх быть брошенной, эмоциональная зависимость, болезненные расставания и поиск себя вне чужой реакции.",
+    title: "КПТСР и травматичный опыт",
+    text: "Стыд, настороженность, сложность доверять, телесное напряжение и жизнь после длительного стресса.",
   },
   {
-    title: "Тревога и депрессивные состояния",
-    text: "Навязчивые мысли, апатия, напряжение, хронический стресс и потеря контакта с желаниями.",
+    title: "СДВГ, тревога, депрессия",
+    text: "Расфокус, перегруз, апатия, импульсивность и ощущение, что обычная жизнь требует слишком много сил.",
   },
-  {
-    title: "Стыд и внутренняя критика",
-    text: "Когда кажется, что с вами что-то фундаментально не так, и приходится постоянно заслуживать право быть собой.",
-  },
-  {
-    title: "Кризисы и самоподдержка",
-    text: "Навыки ДБТ, которые помогают переживать острые состояния, выдерживать жизнь и возвращаться к опоре.",
-  },
-];
-
-const notes = [
-  "клинический психолог в обучении",
-  "КПТ + ДБТ + ACT",
-  "член Ассоциации АКПП",
-  "долгосрочная онлайн-терапия",
 ];
 
 const principles = [
-  ["Безоценочность", "Можно говорить о сложном без страха, что вас будут чинить, стыдить или торопить."],
-  ["Честность", "Я не обещаю быстрых чудес, но помогаю искать устойчивые шаги и понятную рамку."],
-  ["Уважение", "У каждой истории есть контекст. Мне важно услышать его, а не подогнать человека под шаблон."],
+  ["Безоценочность", "Можно говорить о сложном без страха, что вас будут стыдить или срочно чинить."],
+  ["Ясные договоренности", "Мы заранее обсуждаем процесс, регулярность, границы работы и формат связи."],
+  ["Уважение к опыту", "Я не подгоняю человека под шаблон. У каждой реакции есть история и контекст."],
 ];
 
-const posts = [
+const firstMeeting = [
+  {
+    title: "Спокойно знакомимся",
+    text: "Вы рассказываете, что сейчас болит и чего хочется от работы. Я задаю вопросы, чтобы лучше понять контекст.",
+  },
+  {
+    title: "Договариваемся о процессе",
+    text: "Обсуждаем регулярность, формат, ожидания, оплату и то, какие темы важно держать особенно бережно.",
+  },
+  {
+    title: "Смотрим, подходит ли контакт",
+    text: "Первая встреча не обязывает продолжать. Важно, чтобы рядом со мной вам было достаточно спокойно и понятно.",
+  },
+];
+
+const learning = [
+  {
+    title: "Образование и клиническая подготовка",
+    text: "Я обучаюсь на клинического психолога и продолжаю углублять знания в психопатологии, КПТ, ДБТ и ACT.",
+  },
+  {
+    title: "Супервизии и личная терапия",
+    text: "Работа идет с регулярной профессиональной поддержкой и личной терапией. Это часть ответственности, а не формальность.",
+  },
+  {
+    title: "Современная научная опора",
+    text: "Я читаю профессиональную литературу, прохожу повышения квалификации и сверяю практику с доказательными подходами.",
+  },
+];
+
+const library = [
   {
     title: "Романтизация расстройств",
     href: "https://t.me/barbarakaracharovaa/2114",
-    text: "О том, почему за эстетикой боли часто теряется реальность БАР, ПРЛ, депрессии, лечения и восстановления.",
+    text: "Почему эстетика боли может мешать видеть реальность лечения, восстановления и живой человеческой сложности.",
   },
   {
     title: "Почему ремиссия может пугать",
@@ -77,47 +92,6 @@ const posts = [
     href: "https://t.me/barbarakaracharovaa/2135",
     text: "О терапии как способе понимать, принимать и учитывать разные части опыта.",
   },
-];
-
-const limits = [
-  {
-    title: "Я не психиатр",
-    text: "Я не назначаю и не отменяю медикаменты, не подбираю лечение и не ставлю медицинские диагнозы.",
-  },
-  {
-    title: "Я не разбираю клинические случаи в личных сообщениях",
-    text: "Для этого есть терапевтический процесс с рамкой, регулярностью и ответственностью.",
-  },
-  {
-    title: "Я работаю долгосрочно",
-    text: "Если запрос связан с устойчивыми паттернами, отношениями, травмой или диагнозами, мы не ищем один быстрый совет.",
-  },
-];
-
-const firstMeeting = [
-  {
-    title: "Спокойно знакомимся",
-    text: "Вы рассказываете, с чем приходите, а я задаю вопросы, чтобы лучше понять контекст и ожидания.",
-  },
-  {
-    title: "Проясняем рамку",
-    text: "Обсуждаем регулярность, формат, границы работы и то, какие темы важно держать бережно.",
-  },
-  {
-    title: "Смотрим, подходим ли друг другу",
-    text: "Первая встреча не обязывает продолжать. Важно, чтобы рядом со мной вам было достаточно спокойно и понятно.",
-  },
-];
-
-const education = [
-  "В процессе получения бакалавра по «Психологии»",
-  "Профессиональная переподготовка по клинической психологии",
-  "Когнитивно-поведенческая терапия",
-  "Когнитивно-поведенческие методы работы с зависимостями",
-  "Психология созависимости",
-  "Актуальные вопросы психиатрии и психотерапии",
-  "Суицидология",
-  "Член Ассоциации АКПП",
 ];
 
 const faq = [
@@ -132,8 +106,9 @@ const faq = [
       "Да. Первая встреча нужна, чтобы спокойно познакомиться, обозначить запрос и понять, какой формат работы будет бережным и полезным именно для вас.",
   },
   {
-    question: "Сколько стоит консультация?",
-    answer: "Стоимость онлайн-сессии — 4000 ₽. Запись проходит через форму.",
+    question: "Вы назначаете препараты или ставите диагнозы?",
+    answer:
+      "Нет. Я не психиатр, не назначаю и не отменяю медикаменты, не подбираю лечение и не ставлю медицинские диагнозы.",
   },
 ];
 
@@ -141,6 +116,18 @@ const reveal = {
   hidden: { opacity: 0, y: 18, scale: 0.99 },
   visible: { opacity: 1, y: 0, scale: 1 },
 };
+
+function keep(text: string) {
+  return text
+    .replace(/\b(в|с|к|о|об|и|а|но|на|по|из|от|до|за|для|при|или)\s+/gi, "$1\u00a0")
+    .replace(/60 минут/g, "60\u00a0минут")
+    .replace(/4000 ₽/g, "4000\u00a0₽")
+    .replace(/клинический психолог/gi, (match) => match.replace(" ", "\u00a0"))
+    .replace(/личная терапия/gi, (match) => match.replace(" ", "\u00a0"))
+    .replace(/личной терапии/gi, (match) => match.replace(" ", "\u00a0"))
+    .replace(/психическое здоровье/gi, (match) => match.replace(" ", "\u00a0"))
+    .replace(/когнитивно-поведенческая терапия/gi, (match) => match.replace(" ", "\u00a0"));
+}
 
 function FadeIn({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
@@ -163,6 +150,20 @@ function Progress() {
   return <motion.div className="reading-progress" style={{ scaleX }} />;
 }
 
+function CTA({
+  variant = "primary",
+  label = "Записаться",
+}: {
+  variant?: "primary" | "secondary" | "quiet";
+  label?: string;
+}) {
+  return (
+    <a className={`button ${variant}`} href={links.booking} target="_blank" rel="noreferrer">
+      {label} <ArrowUpRight size={18} aria-hidden="true" />
+    </a>
+  );
+}
+
 function Header() {
   return (
     <header className="site-header">
@@ -173,7 +174,7 @@ function Header() {
         <a href="#requests">Запросы</a>
         <a href="#about">Обо мне</a>
         <a href="#format">Формат</a>
-        <a href="#posts">Тексты</a>
+        <a href="#library">Библиотека</a>
         <a href="#price">Стоимость</a>
         <a href="#contacts">Контакты</a>
       </nav>
@@ -195,7 +196,6 @@ function Hero() {
       </div>
       <div className="hero-layout">
         <FadeIn className="hero-copy">
-          <span className="cloud" aria-hidden="true" />
           <p className="kicker">Познакомимся?</p>
           <h1>
             Варя
@@ -205,26 +205,22 @@ function Hero() {
             психолог
           </h1>
           <p className="lead">
-            Пространство, где можно говорить о БАР, ПРЛ, ПТСР, стыде,
-            привязанности и эмоциональных качелях без попытки срочно стать
-            «нормальной».
+            {keep(
+              "Пространство, где можно говорить о БАР, ПРЛ, КПТСР, СДВГ, стыде, привязанности и эмоциональных качелях без попытки срочно стать «нормальной».",
+            )}
           </p>
           <div className="actions">
-            <a className="button primary" href={links.booking} target="_blank" rel="noreferrer">
-              Записаться <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
+            <CTA />
             <a className="button secondary" href={links.telegram} target="_blank" rel="noreferrer">
               Telegram <MessageCircle size={18} aria-hidden="true" />
             </a>
           </div>
         </FadeIn>
-        <FadeIn className="hero-collage">
+        <FadeIn className="hero-portrait">
           <img src="/images/varia-hero-cinematic.jpg" alt="Варвара Лузан" className="hero-photo" />
-          <div className="paper-note">
-            <span>Привет. Меня зовут Варя</span>
-            <p>Я знакома с диагнозами не только как специалист и верю, что изменения возможны.</p>
-          </div>
-          <div className="scribble" aria-hidden="true" />
+          <p className="portrait-caption">
+            {keep("Я знаю многие переживания не только как специалист, но и как человек.")}
+          </p>
         </FadeIn>
       </div>
     </section>
@@ -234,19 +230,34 @@ function Hero() {
 function Requests() {
   return (
     <section id="requests" className="section requests-section">
-      <FadeIn className="section-heading">
+      <FadeIn className="section-heading split-heading">
         <span className="eyebrow">С чем можно прийти</span>
-        <h2>Когда внутри много, а слов пока недостаточно</h2>
+        <h2>Не диагноз в центре, а человек внутри своего опыта</h2>
       </FadeIn>
-      <div className="request-grid">
+      <div className="request-grid compact-grid">
         {requests.map((item, index) => (
           <FadeIn className="request-card" key={item.title}>
             <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
             <h3>{item.title}</h3>
-            <p>{item.text}</p>
+            <p>{keep(item.text)}</p>
           </FadeIn>
         ))}
       </div>
+    </section>
+  );
+}
+
+function Philosophy() {
+  return (
+    <section className="philosophy-section" aria-label="Главная мысль сайта">
+      <FadeIn className="philosophy-inner">
+        <span className="eyebrow">Главная мысль</span>
+        <blockquote>
+          Некоторые вещи вообще не нужно чинить. Какие-то части себя нужно понимать,
+          какие-то — принимать, какие-то — учиться учитывать, а какие-то вообще
+          оказываются не поломкой, а обычным человеческим опытом.
+        </blockquote>
+      </FadeIn>
     </section>
   );
 }
@@ -261,63 +272,58 @@ function About() {
         <span className="eyebrow">Обо мне</span>
         <h2>Я — Варя</h2>
         <p>
-          Клинический психолог в обучении, мама двоих детей, человек с непростым
-          прошлым и длительным опытом личной терапии.
+          {keep(
+            "Клинический психолог, мама двоих детей, человек с непростым прошлым и длительным опытом личной терапии.",
+          )}
         </p>
         <p>
-          Сейчас я в ремиссии БАР, а критерии ПРЛ скомпенсированы. Возможно,
-          поэтому я слишком хорошо знаю, насколько безнадежными могут казаться
-          эти состояния — и насколько на самом деле возможны изменения.
+          {keep(
+            "Я открыто говорю о жизни с БАР и ПРЛ не потому, что строю вокруг этого идентичность. Это часть моего профессионального пути и человеческого опыта, который помогает мне быть внимательной к чужой боли без романтизации диагнозов.",
+          )}
         </p>
-        <div className="note-list">
-          {notes.map((note) => (
-            <span key={note}>{note}</span>
-          ))}
+        <p className="soft-note">
+          {keep("В работе для меня важны ясность, бережность, честность и уважение к вашим границам.")}
+        </p>
+        <div className="about-actions">
+          <CTA variant="quiet" label="Записаться на первую встречу" />
+          <a className="text-link" href={links.telegram} target="_blank" rel="noreferrer">
+            Читать Telegram <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
         </div>
       </FadeIn>
     </section>
   );
 }
 
-function Principles() {
-  return (
-    <section className="section principles-section">
-      <FadeIn className="section-heading narrow">
-        <span className="eyebrow">На чем держится работа</span>
-        <h2>Без осуждения, но с ясной рамкой</h2>
-      </FadeIn>
-      <div className="principles-grid">
-        {principles.map(([title, text]) => (
-          <FadeIn className="principle-card" key={title}>
-            <Sparkles size={20} aria-hidden="true" />
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </FadeIn>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function FormatBoundaries() {
+function Format() {
   return (
     <section id="format" className="section format-section">
       <FadeIn className="format-intro">
-        <span className="eyebrow">Формат</span>
+        <span className="eyebrow">Формат работы</span>
         <h2>Долгосрочная онлайн-терапия в КПТ-подходе</h2>
         <p>
-          В работе я использую методы ДБТ и ACT: они помогают глубже работать с
-          эмоциями, внутренними конфликтами, ценностями и острыми состояниями.
+          {keep(
+            "Я использую методы ДБТ и ACT, когда нужно глубже работать с эмоциями, ценностями, внутренними конфликтами и острыми состояниями.",
+          )}
         </p>
       </FadeIn>
-      <div className="limits-grid">
-        {limits.map((item, index) => (
-          <FadeIn className="limit-card" key={item.title}>
-            <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </FadeIn>
-        ))}
+      <div className="format-layout">
+        <div className="format-copy">
+          {principles.map(([title, text]) => (
+            <FadeIn className="principle-line" key={title}>
+              <Sparkles size={18} aria-hidden="true" />
+              <div>
+                <h3>{title}</h3>
+                <p>{keep(text)}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+        <FadeIn className="format-aside">
+          <span>В терапии мы не ищем один быстрый совет.</span>
+          <p>{keep("Мы постепенно замечаем повторяющиеся реакции и собираем способы жить устойчивее.")}</p>
+          <CTA variant="secondary" label="Обсудить формат" />
+        </FadeIn>
       </div>
     </section>
   );
@@ -330,12 +336,14 @@ function FirstMeeting() {
         <span className="eyebrow">Первая встреча</span>
         <h2>Как проходит начало работы</h2>
       </FadeIn>
-      <div className="meeting-grid">
+      <div className="timeline">
         {firstMeeting.map((item, index) => (
-          <FadeIn className="meeting-card" key={item.title}>
-            <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
+          <FadeIn className="timeline-item" key={item.title}>
+            <span className="timeline-number">{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{keep(item.text)}</p>
+            </div>
           </FadeIn>
         ))}
       </div>
@@ -343,42 +351,27 @@ function FirstMeeting() {
   );
 }
 
-function Posts() {
+function Learning() {
   return (
-    <section id="posts" className="section posts-section">
-      <FadeIn className="section-heading">
-        <span className="eyebrow">Полезное</span>
-        <h2>Тексты, по которым можно почувствовать мой язык</h2>
+    <section className="section learning-section">
+      <FadeIn className="section-heading editorial-heading">
+        <span className="eyebrow">На что я опираюсь</span>
+        <h2>Хороший психолог учится всю жизнь</h2>
+        <p>
+          {keep(
+            "За моей работой стоят образование, клиническая подготовка, супервизии, личная терапия и постоянное развитие.",
+          )}
+        </p>
       </FadeIn>
-      <div className="posts-grid">
-        {posts.map((post, index) => (
-          <FadeIn className="post-card" key={post.href}>
-            <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
-            <h3>{post.title}</h3>
-            <p>{post.text}</p>
-            <a href={post.href} target="_blank" rel="noreferrer">
-              Читать <ArrowUpRight size={17} aria-hidden="true" />
-            </a>
-          </FadeIn>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Education() {
-  return (
-    <section className="section education">
-      <FadeIn className="section-heading narrow">
-        <span className="eyebrow">Образование и документы</span>
-        <h2>Обучение и профессиональная подготовка</h2>
-      </FadeIn>
-      <div className="education-layout">
-        <div className="education-list">
-          {education.map((item) => (
-            <FadeIn className="education-card" key={item}>
+      <div className="learning-layout">
+        <div className="learning-list">
+          {learning.map((item) => (
+            <FadeIn className="learning-item" key={item.title}>
               <BookOpen size={20} aria-hidden="true" />
-              <span>{item}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{keep(item.text)}</p>
+              </div>
             </FadeIn>
           ))}
         </div>
@@ -393,19 +386,40 @@ function Education() {
   );
 }
 
+function Library() {
+  return (
+    <section id="library" className="section library-section">
+      <FadeIn className="section-heading split-heading">
+        <span className="eyebrow">Библиотека</span>
+        <h2>Тексты, по которым можно почувствовать мой язык</h2>
+      </FadeIn>
+      <div className="library-grid">
+        {library.map((post) => (
+          <FadeIn className="library-card" key={post.href}>
+            <span>Telegram</span>
+            <h3>{post.title}</h3>
+            <p>{keep(post.text)}</p>
+            <a href={post.href} target="_blank" rel="noreferrer">
+              Читать <ArrowUpRight size={17} aria-hidden="true" />
+            </a>
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Price() {
   return (
     <section id="price" className="section price-section">
       <FadeIn className="price-card">
         <div>
           <span className="eyebrow">Стоимость</span>
-          <h2>Онлайн-сессия</h2>
-          <p>Запись через форму. Стоимость одной консультации.</p>
+          <h2>Онлайн-консультация</h2>
+          <p>{keep("60 минут. После заявки я свяжусь с вами, чтобы согласовать время и формат первой встречи.")}</p>
         </div>
-        <div className="price-value">4000 ₽</div>
-        <a className="button primary" href={links.booking} target="_blank" rel="noreferrer">
-          Записаться <ArrowUpRight size={18} aria-hidden="true" />
-        </a>
+        <div className="price-value">4000&nbsp;₽</div>
+        <CTA />
       </FadeIn>
     </section>
   );
@@ -436,12 +450,15 @@ function FAQ() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25 }}
               >
-                {item.answer}
+                {keep(item.answer)}
               </motion.p>
             )}
           </FadeIn>
         ))}
       </div>
+      <FadeIn className="section-cta">
+        <CTA variant="quiet" label="Записаться спокойно" />
+      </FadeIn>
     </section>
   );
 }
@@ -453,8 +470,7 @@ function Contacts() {
         <span className="eyebrow">Контакты</span>
         <h2>Познакомимся?</h2>
         <p>
-          Самый прямой путь — форма записи. Для живого контекста и публикаций можно
-          перейти в Telegram или Instagram*.
+          {keep("Самый прямой путь — форма записи. Для живого контекста и публикаций можно перейти в Telegram или Instagram*.")}
         </p>
         <div className="contact-links">
           <a href={links.booking} target="_blank" rel="noreferrer">
@@ -488,7 +504,7 @@ function JsonLd() {
           image: "/images/varia-hero-cinematic.jpg",
           url: links.instagram,
           sameAs: [links.instagram, links.telegram],
-          knowsAbout: ["КПТ", "ДБТ", "ACT", "ПРЛ", "БАР", "ПТСР", "созависимость"],
+          knowsAbout: ["КПТ", "ДБТ", "ACT", "ПРЛ", "БАР", "КПТСР", "СДВГ"],
           memberOf: "Ассоциация КПТ терапевтов",
         },
         {
@@ -511,8 +527,7 @@ function Footer() {
     <footer>
       <div className="source-notes">
         <p>
-          Услуги носят консультативный характер, не являются медицинской деятельностью
-          и не заменяют обращения к врачу.
+          {keep("Услуги носят консультативный характер, не являются медицинской деятельностью и не заменяют обращения к врачу.")}
         </p>
         <p>Сайт предназначен для лиц старше 18 лет (18+).</p>
         <p>
@@ -542,12 +557,12 @@ function App() {
       <main>
         <Hero />
         <Requests />
+        <Philosophy />
         <About />
-        <Principles />
-        <FormatBoundaries />
+        <Format />
         <FirstMeeting />
-        <Posts />
-        <Education />
+        <Learning />
+        <Library />
         <Price />
         <FAQ />
         <Contacts />
