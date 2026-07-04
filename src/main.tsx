@@ -12,7 +12,9 @@ import {
 import "./styles.css";
 
 const links = {
-  booking: "https://forms.gle/uEQjb3G1icpALYnp9",
+  booking: "https://docs.google.com/forms/d/e/1FAIpQLSfJ86HO_YiK0rN2yhrdKltusymdy_FAjyeoxqT4TYTjXmyG1g/viewform?usp=header",
+  bookingEmbed:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfJ86HO_YiK0rN2yhrdKltusymdy_FAjyeoxqT4TYTjXmyG1g/viewform?embedded=true",
   telegram: "https://t.me/barbarakaracharovaa",
   instagram: "https://www.instagram.com/barbarakaracharova.a",
   docs: "https://drive.google.com/drive/folders/1oplxtSNpSCYeQsyoCgzILNulmMn6hGnl?usp=sharing",
@@ -22,36 +24,44 @@ const links = {
 
 const requests = [
   {
-    title: "БАР, ПРЛ, КПТСР",
-    text: "Когда важно видеть за диагнозом не ярлык, а живой опыт, реакции, историю и способы опоры.",
+    title: "Жить с диагнозом и не сводить себя к нему",
+    text: "БАР, ПРЛ, КПТСР могут быть частью истории, но не всей вашей личностью.",
   },
   {
-    title: "Эмоциональные качели",
+    title: "Качает так, будто внутри нет устойчивой точки",
     text: "Резкие перепады состояния, импульсивность, усталость от себя и попытки выдерживать больше, чем есть сил.",
   },
   {
-    title: "Отношения и привязанность",
+    title: "Страшно потерять контакт и быть оставленной",
     text: "Страх быть оставленной, эмоциональная зависимость, сложность доверять и поиск более безопасного контакта.",
   },
   {
-    title: "Тревога и депрессивные состояния",
+    title: "Обычная жизнь требует слишком много сил",
     text: "Напряжение, апатия, потеря опоры, перегруз и ощущение, что обычная жизнь требует слишком много сил.",
   },
   {
-    title: "Стыд и внутренняя критика",
+    title: "Стыдно быть собой, даже когда никто не смотрит",
     text: "Когда внутри много самообвинения, сравнения, чувства неправильности и страха быть замеченной.",
   },
   {
-    title: "Кризисы и самоподдержка",
+    title: "В кризисе сложно не остаться одной с собой",
     text: "Периоды, где важно не остаться одной с острым состоянием и собрать понятные способы пережить волну.",
   },
   {
-    title: "«Со мной что-то не так»",
+    title: "Кажется, что со мной что-то не так",
     text: "Ощущение поломки, чуждости себе, внутренней пустоты и сложности назвать то, что происходит.",
   },
   {
-    title: "СДВГ и расфокус",
+    title: "Трудно удерживать внимание и собирать жизнь",
     text: "Хаос в задачах, трудность удерживать внимание, перегруз от быта и поиск более бережной организации жизни.",
+  },
+  {
+    title: "Прошлый опыт до сих пор отзывается в теле",
+    text: "Последствия травматичного опыта, настороженность, напряжение и осторожная работа с безопасностью.",
+  },
+  {
+    title: "Потерян контакт с собой",
+    text: "Когда трудно понять, чего вы хотите, что чувствуете и где заканчивается чужое ожидание.",
   },
 ];
 
@@ -177,7 +187,7 @@ function CTA({
   label?: string;
 }) {
   return (
-    <a className={`button ${variant}`} href={links.booking} target="_blank" rel="noreferrer">
+    <a className={`button ${variant}`} href="#contacts">
       {label} <ArrowUpRight size={18} aria-hidden="true" />
     </a>
   );
@@ -197,7 +207,7 @@ function Header() {
         <a href="#price">Стоимость</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <a className="header-cta" href={links.booking} target="_blank" rel="noreferrer">
+      <a className="header-cta" href="#contacts">
         Записаться <ArrowUpRight size={16} aria-hidden="true" />
       </a>
     </header>
@@ -224,9 +234,11 @@ function Hero() {
             психолог
           </h1>
           <p className="lead">
-            {keep(
-              "Помогаю не стать другим человеком, а лучше понять того, кем вы уже являетесь.",
-            )}
+            Помогаю не стать другим человеком,
+            <br />
+            а лучше понять того,
+            <br />
+            кем вы уже являетесь.
           </p>
           <div className="actions">
             <CTA />
@@ -252,10 +264,10 @@ function Requests() {
   return (
     <section id="requests" className="section requests-section">
       <FadeIn className="section-heading split-heading">
-        <span className="eyebrow">С чем можно прийти</span>
+        <span className="eyebrow">Возможно, вы узнаете здесь себя</span>
         <h2>За диагнозом всегда остается человек</h2>
       </FadeIn>
-      <div className="request-grid compact-grid">
+      <div className="request-mosaic">
         {requests.map((item, index) => (
           <FadeIn className="request-card" key={item.title}>
             <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
@@ -263,6 +275,18 @@ function Requests() {
             <p>{keep(item.text)}</p>
           </FadeIn>
         ))}
+        <FadeIn className="request-card request-card-note">
+          <span className="row-number">?</span>
+          <h3>Не нашли здесь свой запрос? Это нормально.</h3>
+          <p>
+            {keep(
+              "Не обязательно заранее знать, как называется то, что с вами происходит. Иногда достаточно ощущения, что стало слишком тяжело справляться в одиночку.",
+            )}
+          </p>
+          <a href="#contacts">
+            Обсудить свой запрос <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        </FadeIn>
       </div>
     </section>
   );
@@ -278,7 +302,9 @@ function Philosophy() {
           <span>
             Какие-то части себя нужно понимать, какие-то — принимать, какие-то —
             учиться учитывать, а какие-то вообще оказываются не поломкой,{" "}
-            <NoBreak>а обычным человеческим опытом.</NoBreak>
+            <span className="quote-tail">
+              <span className="keep-together">а обычным</span> человеческим опытом.
+            </span>
           </span>
         </blockquote>
       </FadeIn>
@@ -345,7 +371,11 @@ function Format() {
         </div>
         <FadeIn className="format-aside">
           <span>
-            <NoBreak>В терапии мы не ищем</NoBreak> один быстрый совет.
+            В терапии мы
+            <br />
+            не ищем один быстрый
+            <br />
+            совет.
           </span>
           <p>{keep("Мы постепенно замечаем повторяющиеся реакции и собираем способы жить устойчивее.")}</p>
           <CTA variant="secondary" label="Обсудить формат" />
@@ -361,6 +391,11 @@ function FirstMeeting() {
       <FadeIn className="section-heading narrow">
         <span className="eyebrow">Первая встреча</span>
         <h2>Как проходит начало работы</h2>
+        <p className="section-note">
+          {keep(
+            "На первой встрече не нужно сразу знать, как правильно рассказывать о себе. Можно начать с того, что сейчас трудно.",
+          )}
+        </p>
       </FadeIn>
       <div className="meeting-grid">
         {firstMeeting.map((item, index) => (
@@ -369,7 +404,8 @@ function FirstMeeting() {
             <h3>
               {item.title === "Договариваемся о процессе" ? (
                 <>
-                  Договариваемся <NoBreak>о процессе</NoBreak>
+                  Договариваемся
+                  <br /> о процессе
                 </>
               ) : (
                 item.title
@@ -440,7 +476,13 @@ function Library() {
       <div className="library-grid">
         {library.map((post) => (
           <FadeIn className="library-card" key={post.href}>
-            <span>Telegram</span>
+            <span>
+              {post.title === "Романтизация расстройств"
+                ? "Про боль и реальность"
+                : post.title === "Почему ремиссия может пугать"
+                  ? "Про ремиссию"
+                  : "Про терапию"}
+            </span>
             <h3>{post.title}</h3>
             <p>
               {post.title === "Почему ремиссия может пугать" ? (
@@ -519,26 +561,43 @@ function FAQ() {
 function Contacts() {
   return (
     <section id="contacts" className="section contacts">
-      <FadeIn className="contact-copy">
-        <span className="eyebrow">Контакты</span>
-        <h2>Если вам близок мой подход</h2>
-        <p>
-          {keep("Оставьте заявку или перейдите в Telegram — там можно лучше почувствовать мой язык и стиль работы.")}
-        </p>
-        <div className="contact-links">
-          <a href={links.booking} target="_blank" rel="noreferrer">
-            Записаться <ArrowUpRight size={18} />
+      <div className="contact-panel">
+        <FadeIn className="contact-copy">
+          <span className="eyebrow">Запись</span>
+          <h2>Если вам близок мой подход</h2>
+          <p>
+            {keep(
+              "Можно начать с короткой заявки. После отправки формы я свяжусь с вами, чтобы согласовать время и формат первой встречи.",
+            )}
+          </p>
+          <div className="contact-drawing" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="contact-links">
+            <a href={links.telegram} target="_blank" rel="noreferrer">
+              Telegram <MessageCircle size={18} />
+            </a>
+            <a href={links.instagram} target="_blank" rel="noreferrer">
+              Instagram* <Instagram size={18} />
+            </a>
+          </div>
+        </FadeIn>
+        <FadeIn className="form-card">
+          <iframe title="Форма записи на встречу" src={links.bookingEmbed} loading="lazy" />
+          <a className="form-fallback" href={links.booking} target="_blank" rel="noreferrer">
+            Открыть форму записи <ArrowUpRight size={17} aria-hidden="true" />
           </a>
-          <a href={links.telegram} target="_blank" rel="noreferrer">
-            Telegram <MessageCircle size={18} />
-          </a>
-          <a href={links.instagram} target="_blank" rel="noreferrer">
-            Instagram* <Instagram size={18} />
-          </a>
-        </div>
-      </FadeIn>
-      <FadeIn className="contact-portrait">
+        </FadeIn>
+      </div>
+      <FadeIn className="contact-afterword">
         <img src="/images/varia-close.jpg" alt="Портрет Варвары Лузан" />
+        <p>
+          {keep(
+            "Можно начать без длинного объяснения. Иногда достаточно коротко написать, что сейчас трудно.",
+          )}
+        </p>
       </FadeIn>
     </section>
   );
