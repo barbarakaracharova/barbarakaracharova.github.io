@@ -199,7 +199,7 @@ nav a:hover,
 h1 {
   color: #3476c9;
   font-size: clamp(54px, 6.1vw, 104px);
-  font-weight: 500;
+  font-weight: 520;
   letter-spacing: 0;
   line-height: 0.93;
   text-wrap: balance;
@@ -309,10 +309,10 @@ p {
 
 .hero-cloud {
   position: relative;
-  width: 70px;
-  height: 34px;
-  margin: 0 auto 22px;
-  opacity: 0.72;
+  width: 74px;
+  height: 48px;
+  margin: 0 auto 18px;
+  opacity: 0.82;
 }
 
 .hero-cloud::before,
@@ -322,24 +322,28 @@ p {
 }
 
 .hero-cloud::before {
-  inset: 7px 0 0;
-  border: 2px solid rgba(255, 118, 81, 0.44);
-  border-top-color: transparent;
-  border-radius: 999px;
-  transform: rotate(-3deg);
+  left: 8px;
+  top: 12px;
+  width: 52px;
+  height: 30px;
+  border-radius: 999px 999px 18px 18px;
+  background: #ffbfd0;
+  box-shadow:
+    -10px 4px 0 -2px #ffbfd0,
+    10px 1px 0 0 #ffbfd0,
+    21px 9px 0 -7px #ffbfd0;
+  transform: rotate(2deg);
 }
 
 .hero-cloud::after {
-  top: 0;
-  left: 9px;
-  width: 52px;
-  height: 28px;
-  border-top: 2px solid rgba(255, 118, 81, 0.44);
-  border-radius: 50%;
-  box-shadow:
-    14px 2px 0 -10px rgba(255, 191, 208, 0.8),
-    -8px 3px 0 -9px rgba(255, 191, 208, 0.8);
-  transform: rotate(4deg);
+  right: 12px;
+  bottom: 2px;
+  width: 0;
+  height: 0;
+  border-width: 10px 5px 0 0;
+  border-style: solid;
+  border-color: #ffbfd0 transparent transparent transparent;
+  transform: rotate(-12deg);
 }
 
 .hero-photo-frame {
@@ -452,37 +456,12 @@ p {
   position: relative;
 }
 
-.requests-section::after {
-  position: absolute;
-  right: min(8vw, 90px);
-  bottom: 24px;
-  width: 58px;
-  height: 22px;
-  border-bottom: 2px solid rgba(255, 118, 81, 0.32);
-  border-radius: 50%;
-  content: "";
-  transform: rotate(-8deg);
-  pointer-events: none;
-}
-
 .philosophy-section {
   position: relative;
   width: 100%;
   overflow: hidden;
   padding: clamp(44px, 6vw, 82px) max(18px, calc((100vw - 1240px) / 2));
   background: #2d69b3;
-}
-
-.philosophy-section::after {
-  position: absolute;
-  right: max(18px, calc((100vw - 1240px) / 2));
-  top: 26%;
-  width: 92px;
-  height: 34px;
-  border-top: 2px solid rgba(255, 250, 242, 0.28);
-  border-radius: 50%;
-  content: "";
-  transform: rotate(9deg);
 }
 
 .philosophy-inner {
@@ -528,18 +507,6 @@ p {
   position: relative;
 }
 
-.about-photo-wrap::after {
-  position: absolute;
-  right: -18px;
-  bottom: 18%;
-  width: 52px;
-  height: 20px;
-  border-bottom: 2px solid rgba(255, 118, 81, 0.34);
-  border-radius: 50%;
-  content: "";
-  transform: rotate(-18deg);
-}
-
 .about-photo {
   display: block;
   width: 100%;
@@ -556,7 +523,7 @@ p {
 }
 
 .about-copy p {
-  max-width: 720px;
+  max-width: 660px;
 }
 
 .soft-note {
@@ -790,18 +757,6 @@ p {
   content: "";
 }
 
-.document-card::after {
-  position: absolute;
-  right: 28px;
-  top: 34px;
-  width: 42px;
-  height: 20px;
-  border-top: 2px solid rgba(255, 250, 242, 0.34);
-  border-radius: 50%;
-  content: "";
-  transform: rotate(18deg);
-}
-
 .document-stack {
   position: absolute;
   top: 34px;
@@ -998,17 +953,6 @@ p {
   margin-top: 22px;
 }
 
-.section-cta::after {
-  position: absolute;
-  left: 180px;
-  top: 50%;
-  width: 44px;
-  height: 1.5px;
-  background: rgba(255, 118, 81, 0.42);
-  content: "";
-  transform: rotate(-7deg);
-}
-
 .contacts {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 310px;
@@ -1023,7 +967,7 @@ p {
 }
 
 .contact-copy p {
-  max-width: 660px;
+  max-width: 760px;
 }
 
 .contact-portrait img {

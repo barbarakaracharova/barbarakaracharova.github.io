@@ -224,9 +224,9 @@ function Hero() {
             психолог
           </h1>
           <p className="lead">
-            Помогаю не стать другим человеком,
+            Помогаю не стать другим
             <br />
-            а лучше понять того,
+            человеком, а лучше понять того,
             <br />
             кем вы уже являетесь.
           </p>
@@ -261,7 +261,17 @@ function Requests() {
         {requests.map((item, index) => (
           <FadeIn className="request-card" key={item.title}>
             <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
-            <h3>{item.title}</h3>
+            <h3>
+              {item.title === "«Со мной что-то не так»" ? (
+                <>
+                  «Со мной что-то
+                  <br />
+                  не так»
+                </>
+              ) : (
+                item.title
+              )}
+            </h3>
             <p>{keep(item.text)}</p>
           </FadeIn>
         ))}
@@ -351,9 +361,9 @@ function Format() {
           <span>
             В терапии мы
             <br />
-            <NoBreak>не ищем один быстрый</NoBreak>
+            не ищем один
             <br />
-            совет.
+            быстрый ответ.
           </span>
           <p>{keep("Мы постепенно замечаем повторяющиеся реакции и собираем способы жить устойчивее.")}</p>
           <CTA variant="secondary" label="Обсудить формат" />
@@ -531,7 +541,9 @@ function Contacts() {
         <span className="eyebrow">Контакты</span>
         <h2>Если вам близок мой подход</h2>
         <p>
-          {keep("Оставьте заявку или перейдите в Telegram — там можно лучше почувствовать мой язык и стиль работы.")}
+          {keep(
+            "Оставьте заявку. Я свяжусь с вами, чтобы согласовать удобное время, ответить на вопросы и договориться о первой встрече.",
+          )}
         </p>
         <div className="contact-links">
           <a href={links.booking} target="_blank" rel="noreferrer">
