@@ -13,8 +13,6 @@ import "./styles.css";
 
 const links = {
   booking: "https://docs.google.com/forms/d/e/1FAIpQLSfJ86HO_YiK0rN2yhrdKltusymdy_FAjyeoxqT4TYTjXmyG1g/viewform?usp=header",
-  bookingEmbed:
-    "https://docs.google.com/forms/d/e/1FAIpQLSfJ86HO_YiK0rN2yhrdKltusymdy_FAjyeoxqT4TYTjXmyG1g/viewform?embedded=true",
   telegram: "https://t.me/barbarakaracharovaa",
   instagram: "https://www.instagram.com/barbarakaracharova.a",
   docs: "https://drive.google.com/drive/folders/1oplxtSNpSCYeQsyoCgzILNulmMn6hGnl?usp=sharing",
@@ -24,44 +22,36 @@ const links = {
 
 const requests = [
   {
-    title: "Жить с диагнозом и не сводить себя к нему",
-    text: "БАР, ПРЛ, КПТСР могут быть частью истории, но не всей вашей личностью.",
+    title: "БАР, ПРЛ, КПТСР",
+    text: "Когда важно видеть за диагнозом не ярлык, а живой опыт, реакции, историю и способы опоры.",
   },
   {
-    title: "Качает так, будто внутри нет устойчивой точки",
+    title: "Эмоциональные качели",
     text: "Резкие перепады состояния, импульсивность, усталость от себя и попытки выдерживать больше, чем есть сил.",
   },
   {
-    title: "Страшно потерять контакт и быть оставленной",
+    title: "Отношения и привязанность",
     text: "Страх быть оставленной, эмоциональная зависимость, сложность доверять и поиск более безопасного контакта.",
   },
   {
-    title: "Обычная жизнь требует слишком много сил",
+    title: "Тревога и депрессивные состояния",
     text: "Напряжение, апатия, потеря опоры, перегруз и ощущение, что обычная жизнь требует слишком много сил.",
   },
   {
-    title: "Стыдно быть собой, даже когда никто не смотрит",
+    title: "Стыд и внутренняя критика",
     text: "Когда внутри много самообвинения, сравнения, чувства неправильности и страха быть замеченной.",
   },
   {
-    title: "В кризисе сложно не остаться одной с собой",
+    title: "Кризисы и самоподдержка",
     text: "Периоды, где важно не остаться одной с острым состоянием и собрать понятные способы пережить волну.",
   },
   {
-    title: "Кажется, что со мной что-то не так",
+    title: "«Со мной что-то не так»",
     text: "Ощущение поломки, чуждости себе, внутренней пустоты и сложности назвать то, что происходит.",
   },
   {
-    title: "Трудно удерживать внимание и собирать жизнь",
+    title: "СДВГ и расфокус",
     text: "Хаос в задачах, трудность удерживать внимание, перегруз от быта и поиск более бережной организации жизни.",
-  },
-  {
-    title: "Прошлый опыт до сих пор отзывается в теле",
-    text: "Последствия травматичного опыта, настороженность, напряжение и осторожная работа с безопасностью.",
-  },
-  {
-    title: "Потерян контакт с собой",
-    text: "Когда трудно понять, чего вы хотите, что чувствуете и где заканчивается чужое ожидание.",
   },
 ];
 
@@ -264,10 +254,10 @@ function Requests() {
   return (
     <section id="requests" className="section requests-section">
       <FadeIn className="section-heading split-heading">
-        <span className="eyebrow">Возможно, вы узнаете здесь себя</span>
+        <span className="eyebrow">С чем можно прийти</span>
         <h2>За диагнозом всегда остается человек</h2>
       </FadeIn>
-      <div className="request-mosaic">
+      <div className="request-grid compact-grid">
         {requests.map((item, index) => (
           <FadeIn className="request-card" key={item.title}>
             <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
@@ -275,18 +265,6 @@ function Requests() {
             <p>{keep(item.text)}</p>
           </FadeIn>
         ))}
-        <FadeIn className="request-card request-card-note">
-          <span className="row-number">?</span>
-          <h3>Не нашли здесь свой запрос? Это нормально.</h3>
-          <p>
-            {keep(
-              "Не обязательно заранее знать, как называется то, что с вами происходит. Иногда достаточно ощущения, что стало слишком тяжело справляться в одиночку.",
-            )}
-          </p>
-          <a href="#contacts">
-            Обсудить свой запрос <ArrowUpRight size={17} aria-hidden="true" />
-          </a>
-        </FadeIn>
       </div>
     </section>
   );
@@ -373,7 +351,7 @@ function Format() {
           <span>
             В терапии мы
             <br />
-            не ищем один быстрый
+            <NoBreak>не ищем один быстрый</NoBreak>
             <br />
             совет.
           </span>
@@ -391,11 +369,6 @@ function FirstMeeting() {
       <FadeIn className="section-heading narrow">
         <span className="eyebrow">Первая встреча</span>
         <h2>Как проходит начало работы</h2>
-        <p className="section-note">
-          {keep(
-            "На первой встрече не нужно сразу знать, как правильно рассказывать о себе. Можно начать с того, что сейчас трудно.",
-          )}
-        </p>
       </FadeIn>
       <div className="meeting-grid">
         {firstMeeting.map((item, index) => (
@@ -404,8 +377,7 @@ function FirstMeeting() {
             <h3>
               {item.title === "Договариваемся о процессе" ? (
                 <>
-                  Договариваемся
-                  <br /> о процессе
+                  Договариваемся <NoBreak>о процессе</NoBreak>
                 </>
               ) : (
                 item.title
@@ -476,13 +448,7 @@ function Library() {
       <div className="library-grid">
         {library.map((post) => (
           <FadeIn className="library-card" key={post.href}>
-            <span>
-              {post.title === "Романтизация расстройств"
-                ? "Про боль и реальность"
-                : post.title === "Почему ремиссия может пугать"
-                  ? "Про ремиссию"
-                  : "Про терапию"}
-            </span>
+            <span>Telegram</span>
             <h3>{post.title}</h3>
             <p>
               {post.title === "Почему ремиссия может пугать" ? (
@@ -561,43 +527,26 @@ function FAQ() {
 function Contacts() {
   return (
     <section id="contacts" className="section contacts">
-      <div className="contact-panel">
-        <FadeIn className="contact-copy">
-          <span className="eyebrow">Запись</span>
-          <h2>Если вам близок мой подход</h2>
-          <p>
-            {keep(
-              "Можно начать с короткой заявки. После отправки формы я свяжусь с вами, чтобы согласовать время и формат первой встречи.",
-            )}
-          </p>
-          <div className="contact-drawing" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="contact-links">
-            <a href={links.telegram} target="_blank" rel="noreferrer">
-              Telegram <MessageCircle size={18} />
-            </a>
-            <a href={links.instagram} target="_blank" rel="noreferrer">
-              Instagram* <Instagram size={18} />
-            </a>
-          </div>
-        </FadeIn>
-        <FadeIn className="form-card">
-          <iframe title="Форма записи на встречу" src={links.bookingEmbed} loading="lazy" />
-          <a className="form-fallback" href={links.booking} target="_blank" rel="noreferrer">
-            Открыть форму записи <ArrowUpRight size={17} aria-hidden="true" />
-          </a>
-        </FadeIn>
-      </div>
-      <FadeIn className="contact-afterword">
-        <img src="/images/varia-close.jpg" alt="Портрет Варвары Лузан" />
+      <FadeIn className="contact-copy">
+        <span className="eyebrow">Контакты</span>
+        <h2>Если вам близок мой подход</h2>
         <p>
-          {keep(
-            "Можно начать без длинного объяснения. Иногда достаточно коротко написать, что сейчас трудно.",
-          )}
+          {keep("Оставьте заявку или перейдите в Telegram — там можно лучше почувствовать мой язык и стиль работы.")}
         </p>
+        <div className="contact-links">
+          <a href={links.booking} target="_blank" rel="noreferrer">
+            Записаться <ArrowUpRight size={18} />
+          </a>
+          <a href={links.telegram} target="_blank" rel="noreferrer">
+            Telegram <MessageCircle size={18} />
+          </a>
+          <a href={links.instagram} target="_blank" rel="noreferrer">
+            Instagram* <Instagram size={18} />
+          </a>
+        </div>
+      </FadeIn>
+      <FadeIn className="contact-portrait">
+        <img src="/images/varia-close.jpg" alt="Портрет Варвары Лузан" />
       </FadeIn>
     </section>
   );
